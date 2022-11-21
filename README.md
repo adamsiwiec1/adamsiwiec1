@@ -1,7 +1,6 @@
-<h1 align="left">Adam Siwiec</h1>
-<h3 align="left">Software/Data/DevOps Engineer</h3>
----
-### Views
+#Adam Siwiec
+###Software/Data/DevOps Engineer
+
 ![](https://komarev.com/ghpvc/?username=adamsiwiec1)
 
 - stuff1
