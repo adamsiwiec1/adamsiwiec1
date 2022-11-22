@@ -11,7 +11,7 @@
 
 </br>
 
-Cloud Platforms
+### Cloud Platforms
 ![AWS](https://img.shields.io/badge/-AWS-white?style=flat-square&logo=amazon)
 ![GCP](https://img.shields.io/badge/-GCP-white?style=flat-square&logo=gcp)
 
