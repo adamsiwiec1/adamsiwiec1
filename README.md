@@ -72,34 +72,6 @@ Authorized security work. Desktop, iOS, FOSS baselines.
 </tr>
 </table>
 
-## Personal
-
-Public work I would send someone.
-
-<table width="100%">
-<tr>
-<td width="50%" valign="top">
-
-[eileen_artwork_gallery](https://github.com/adamsiwiec1/eileen_artwork_gallery) — Commission studio + gallery for a painter
-
-</td>
-<td width="50%" valign="top">
-
-[backblaze-b2-backup-audit](https://github.com/adamsiwiec1/backblaze-b2-backup-audit) (MIT) — Find junk before an rclone → B2 backup
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-[rclone-backblaze-b2-setup](https://github.com/adamsiwiec1/rclone-backblaze-b2-setup) (MIT) — One-command rclone + B2, then verify
-
-</td>
-<td width="50%" valign="top">
-</td>
-</tr>
-</table>
-
 ## FOSS
 
 Starters and utilities.
