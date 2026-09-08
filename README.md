@@ -80,43 +80,43 @@ Starters and utilities.
 <tr>
 <td width="50%" valign="top">
 
-[foss-template](https://github.com/adamsiwiec1/foss-template) (MIT) — LICENSE, security, CI, VitePress
+[foss-template](https://github.com/adamsiwiec1/foss-template) — LICENSE, security, CI, VitePress
 
 </td>
 <td width="50%" valign="top">
 
-[editable-website](https://github.com/adamsiwiec1/editable-website) (MIT) — Next.js in-place copy editor. [Preview](https://editable-website-five.vercel.app)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-[awesome-docs-generator](https://github.com/adamsiwiec1/awesome-docs-generator) (MIT) — VitePress + Playwright, git-scoped captures
-
-</td>
-<td width="50%" valign="top">
-
-[vitepress-auth-gateway](https://github.com/adamsiwiec1/vitepress-auth-gateway) (MIT) — Auth gate in front of VitePress
+[editable-website](https://github.com/adamsiwiec1/editable-website) — Next.js in-place copy editor. [Preview](https://editable-website-five.vercel.app)
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-[s3Backfiller](https://github.com/adamsiwiec1/s3Backfiller) (MIT) — Copy and transform between S3 buckets (Go)
+[awesome-docs-generator](https://github.com/adamsiwiec1/awesome-docs-generator) — VitePress + Playwright, git-scoped captures
 
 </td>
 <td width="50%" valign="top">
 
-[mcp-sse-authenticated-cloud-run](https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run) (MIT) — MCP over SSE on Cloud Run, IAM auth
+[vitepress-auth-gateway](https://github.com/adamsiwiec1/vitepress-auth-gateway) — Auth gate in front of VitePress
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-[gcp-monorepo-secret-manager](https://github.com/adamsiwiec1/gcp-monorepo-secret-manager) (MIT) — Env files in/out of GCP Secret Manager. [npm](https://www.npmjs.com/package/gcp-monorepo-secret-manager)
+[s3Backfiller](https://github.com/adamsiwiec1/s3Backfiller) — Copy and transform between S3 buckets (Go)
+
+</td>
+<td width="50%" valign="top">
+
+[mcp-sse-authenticated-cloud-run](https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run) — MCP over SSE on Cloud Run, IAM auth
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+[gcp-monorepo-secret-manager](https://github.com/adamsiwiec1/gcp-monorepo-secret-manager) — Env files in/out of GCP Secret Manager. [npm](https://www.npmjs.com/package/gcp-monorepo-secret-manager)
 
 </td>
 <td width="50%" valign="top">
