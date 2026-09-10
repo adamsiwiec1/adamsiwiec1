@@ -1,17 +1,17 @@
-# Adam Siwiec
-
-Software for [Devrecated](https://github.com/devrecated), [OpenHat](https://github.com/openhat-security), and my own tools. TypeScript, Python, Go, Rust. Linux.
-
 ## Skills
 
-| | |
-| --- | --- |
-| Languages | TypeScript, Python, Go, Rust, C#, Shell |
-| Web | Next.js, React, React Native |
-| Cloud | GCP, Cloud Run, Firebase, Vercel, Cloudflare |
-| Infra | Linux, Docker, IAM, rclone, object storage |
-| Security | Tor isolation, iOS/macOS hardening, authorized app assessment |
-| Agents | Cursor plugins, MCP servers, GitHub Projects delivery |
+Skills? What are those? Who the hell even writes code anymore, just throw it into chatgippity or whatevs. It depends who you're asking. According to the HR department, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat, and only show up to mess things up when their wife gets mad at them, I'm useless. 
+
+In all seriousness, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
+1. Write a proprietary, one-of-a-kind, software for your IoT product,
+2. Design the Information System and data model for your entire organization, along with a suite of software products that boost your efficiency (and revenue) by over 200% within 30 days of release.
+
+
+If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd show you some demos of these vineyards, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link: 
+
+
+According to passionate business owners, lifelong builders, and people who love what they do and know how it's done, there's no limit to my technical skills.
+
 
 ## Devrecated
 
