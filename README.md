@@ -1,6 +1,8 @@
 ## Skills
 
-Skills? What are those? Who the hell even writes code anymore, just throw it into chatgippity or whatevs. It depends who you're asking. According to the HR department, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat, and only show up to mess things up when their wife gets mad at them, I'm useless. 
+Skills? What are those? Who the hell even writes code anymore, just throw it into chatgippity or whatevs.
+
+According to the HR department, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat, I have no skills.
 
 In all seriousness, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
 1. Write a proprietary, one-of-a-kind, software for your IoT product,
