@@ -4,10 +4,11 @@ Skills? What are those? Who the hell even writes code anymore, just throw it int
 
 According to the HR, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase".
 
-In all seriousness, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
+TBH, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
 1. Write a proprietary, one-of-a-kind, software for your IoT product,
 2. Design the Information System and data model for your entire organization, along with a suite of software products that boost your efficiency (and revenue) by over 200% within 30 days of release.
-
+3. Build Deep Learning models and custom LLMs
+4. **Cursor made a 'ding', so I stopped writing this, will continue this slop later.
 
 If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd show you some demos of these vineyards, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
 
