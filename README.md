@@ -10,11 +10,7 @@ TBH, there's no boundary to my skills. In a matter of days or weeks, depending o
 3. Build Deep Learning models and custom LLMs
 4. **Cursor made a 'ding', so I stopped writing this, will continue this slop later.
 
-If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd show you some demos of these vineyards, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
-
-
-According to passionate business owners, lifelong builders, and people who love what they do and know how it's done, there's no limit to my technical skills.
-
+If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd link a video demo of these vineyards and lambos, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
 
 ## Devrecated
 
