@@ -2,7 +2,7 @@
 
 Skills? What are those? Who the hell even writes code anymore, just throw it into chatgippity or whatevs.
 
-According to the HR, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills.
+According to the HR, professional spreadsheet gurus (aka, PMs), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase".
 
 In all seriousness, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
 1. Write a proprietary, one-of-a-kind, software for your IoT product,
