@@ -1,14 +1,19 @@
 ## Skills
 
+**Cursor made a 'ding', so I stopped writing this, will continue slopping away here later.
+
 Skills? What are those? Who the hell even has talent or writes code anymore, just throw it into chatgippity or whatevs.
 
 According to professional spreadsheet gurus (aka PMs), HR (aka People Ops Pros), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase".
 
-TBH, there's no boundary to my skills. In a matter of days or weeks, depending on the complexity, I'll:
-1. Write a proprietary, one-of-a-kind, software for your IoT product,
+Jokes aside, I'm a versatile engineer and am very passionate about my work. I can confidently say I can deliver nearly any solution in a matter of days of weeks.
+
+1. Automate a majority of your existing development with AI allowing you to cut engineering costs by over 50% and decrease the size of your workforce by up to 90%, while concurrently increasing the revenue of your organization and quality of your software.
 2. Design the Information System and data model for your entire organization, along with a suite of software products that boost your efficiency (and revenue) by over 200% within 30 days of release.
-3. Build Deep Learning models and custom LLMs
-4. **Cursor made a 'ding', so I stopped writing this, will continue this slop later.
+3. Build Deep Learning models and custom LLMs for niche use cases that don't have anything out of the box available.
+4. Create one-of-a-kind distributed systems, scalable to petabyte scale workloads and millions of users.
+5. Hand-build physical product prototypes using the microcontroller best-fit microcontroller.
+6. Ship your 
 
 If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd link a video demo of these vineyards and lambos, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
 
