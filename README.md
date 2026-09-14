@@ -4,7 +4,7 @@
 
 Skills? What are those? Who the hell even has talent or writes code anymore, just throw it into chatgippity or whatevs.
 
-According to professional spreadsheet gurus (aka PMs), HR (aka People Ops Pros), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase".
+According to professional spreadsheet gurus (aka PMs), HR (aka People Ops Pros), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase". Turns out...if they logged into production more than once a year...they would have noticed it's been live for months.
 
 Jokes aside, I'm a versatile engineer and am very passionate about my work. I can confidently say I can deliver nearly any solution in a matter of days of weeks.
 
