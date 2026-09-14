@@ -14,7 +14,7 @@ If your ideas are bad, the above do not apply. I am an architect and engineer, n
 
 ## Devrecated Solutions
 
-Lot's of devrecated slop incoming. 
+lotz of devrecated slop incoming
 
 <table width="100%">
 <tr>
