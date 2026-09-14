@@ -15,8 +15,6 @@ Jokes aside, I'm a versatile engineer and am very passionate about my work. I ca
 5. Hand-build physical product prototypes using the microcontroller best-fit microcontroller.
 6. Ship your whatever to wherever in a day.
 
-I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah varietal or something from the Bordeaux region). While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd link a video demo of these vineyards and lambos, but the confidentiality agreement I provide (which is heavily tailored in favor of my clients) only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
-
 ## Devrecated Solutions
 
 lotz of devrecated slop incoming
