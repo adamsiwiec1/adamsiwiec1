@@ -13,15 +13,15 @@ Jokes aside, I'm a versatile engineer and am very passionate about my work. I ca
 3. Build Deep Learning models and custom LLMs for niche use cases that don't have anything out of the box available.
 4. Create one-of-a-kind distributed systems, scalable to petabyte scale workloads and millions of users.
 5. Hand-build physical product prototypes using the microcontroller best-fit microcontroller.
-6. Ship your 
+6. Ship your whatever to wherever in a day.
 
-If your ideas are bad, the above do not apply. I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah or something from the Bordeaux region). Should your idea happen to be bad (if you are still reading this, and, as a matter of fact, are even on Github in the first place, I'm certain it's not), then I'll tell you nicely, and we'll brainstorm something that isn't terrible. While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd link a video demo of these vineyards and lambos, but the NDA I provide which is heavily tailored in favor of my clients, only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
+I am an architect and engineer, not a magician. I cannot turn water into wine (as much as I'd like to, ideally a Syrah varietal or something from the Bordeaux region). While I can't turn water into wine unfortunately, my specialty is turning a spark, along with it's motivated founder, into vineyard owners and driver's of Italian machinery. I'd link a video demo of these vineyards and lambos, but the confidentiality agreement I provide (which is heavily tailored in favor of my clients) only allows private demos. Therefore, you will have to schedule a meeting with the following link (Schedule a 15 min Intro Meeting)[https://cal.com/adamsiw/15min]
 
 ## Devrecated Solutions
 
 lotz of devrecated slop incoming
 
-<table width="100%">
+<!-- <table width="100%">
 <tr>
 <td width="50%" valign="top">
 
@@ -43,7 +43,7 @@ lotz of devrecated slop incoming
 <td width="50%" valign="top">
 </td>
 </tr>
-</table>
+</table> -->
 
 ## OpenHat
 
