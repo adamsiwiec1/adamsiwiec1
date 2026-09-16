@@ -66,11 +66,6 @@ Authorized security work. Desktop, iOS, FOSS baselines.
 [phishkit](https://github.com/openhat-security/phishkit) (GPL-3.0) — Authorized AiTM + awareness kit (alpha)
 
 </td>
-<td width="50%" valign="top">
-
-[foss-template](https://github.com/openhat-security/foss-template) (MIT) — Community health files + VitePress docs starter
-
-</td>
 </tr>
 </table>
 
