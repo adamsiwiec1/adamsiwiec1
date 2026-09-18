@@ -1,19 +1,11 @@
-## Skills
-
-**Cursor made a 'ding', so I stopped writing this, will continue slopping away here later.
-
-Skills? What are those? Who the hell even has talent or writes code anymore, just throw it into chatgippity or whatevs.
-
-According to professional spreadsheet gurus (aka PMs), HR (aka People Ops Pros), or CEOs who spend the weekend (aka Sunday-Saturday) on their boat or coaching their son's lacrosse team, I have no skills because I failed to update my JIRA ticket titled "Rewrite the entire codebase". Turns out...if they logged into production more than once a year...they would have noticed it's been live for months.
-
-Jokes aside, I'm a versatile engineer and am very passionate about my work. I can confidently say I will deliver nearly any software solution in a matter of days or weeks.
+I will deliver any software solution in a matter of days or weeks.
 
 1. Automate a majority of your existing development with AI allowing you to cut engineering costs by over 50% and decrease the size of your workforce by up to 90%, while concurrently increasing the revenue of your organization and quality of your software.
 2. Design the Information System and data model for your entire organization, along with a suite of software products that boost your efficiency (and revenue) by over 200% within 30 days of release.
 3. Build Deep Learning models and custom LLMs for niche use cases that don't have anything out of the box available.
 4. Create one-of-a-kind distributed systems, scalable to petabyte scale workloads and millions of users.
 5. Hand-build physical product prototypes using the microcontroller best-fit microcontroller.
-6. Ship your whatever to wherever in a day.
+6. Ship your existing whatever to wherever in a day, no matter the size or scale.
 
 ## Devrecated Solutions
 
