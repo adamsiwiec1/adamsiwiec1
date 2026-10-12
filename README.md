@@ -15,7 +15,7 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 </tr>
 </table>
 
-## Devrecated Solutions
+## Devrecated Solutions <img src="assets/icons/devrecated.png" alt="" width="24" height="24" align="absmiddle">
 
 More business. Fewer engineers.
 
@@ -159,7 +159,7 @@ Reusable skills for Grok Bot, starting with DaVinci Resolve. MIT.
 
 Packaging for the CLI: [Homebrew tap](https://github.com/devrecated/homebrew-tap) · [Scoop bucket](https://github.com/devrecated/scoop-bucket) · [apt and dnf packages](https://github.com/devrecated/packages)
 
-## OpenHat Security
+## OpenHat Security <img src="assets/icons/openhat.svg" alt="" width="24" height="24" align="absmiddle">
 
 Pay us to hack you.
 
