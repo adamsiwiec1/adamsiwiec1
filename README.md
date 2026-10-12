@@ -27,11 +27,11 @@ The pieces are [Autodevelop](https://www.devrecated.com/products/autodevelop), [
 
 <table>
 <tr>
-<td valign="middle"><a href="https://www.devrecated.com"><img src="assets/icons/devrecated.svg" width="28" height="28" alt="" align="absmiddle"> devrecated.com</a></td>
+<td valign="middle"><a href="https://www.devrecated.com"><img src="assets/icons/devrecated.png" width="28" height="28" alt="" align="absmiddle"> devrecated.com</a></td>
 <td>Governed AI development systems</td>
 </tr>
 <tr>
-<td valign="middle"><a href="https://www.devrecated.com/about"><img src="assets/icons/devrecated.svg" width="28" height="28" alt="" align="absmiddle"> About</a></td>
+<td valign="middle"><a href="https://www.devrecated.com/about"><img src="assets/icons/devrecated.png" width="28" height="28" alt="" align="absmiddle"> About</a></td>
 <td>How the practice is set up</td>
 </tr>
 <tr>
@@ -418,6 +418,6 @@ SpoofMAC drops the MacPorts and Node dependency and randomizes the MAC with macO
 </tr>
 </table>
 
-<a href="mailto:sales@devrecated.com"><img src="assets/icons/devrecated.svg" width="28" height="28" alt="" align="absmiddle"> sales@devrecated.com</a>
+<a href="mailto:sales@devrecated.com"><img src="assets/icons/devrecated.png" width="28" height="28" alt="" align="absmiddle"> sales@devrecated.com</a>
 &nbsp;&nbsp;
 <a href="mailto:admin@devrecated.com"><img src="assets/icons/openhat.svg" width="28" height="28" alt="" align="absmiddle"> admin@devrecated.com</a>
