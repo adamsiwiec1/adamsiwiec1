@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="adam siwiec, founder of Devrecated Solutions and OpenHat Security" width="100%">
+  <img src="assets/banner.svg" alt="adam siwiec, founder. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
 I run two companies. **Devrecated Solutions** puts process, gates, and evidence around AI coding agents. **OpenHat Security** does authorized offensive security against an AI-scale attack surface, then leaves the findings, the logs, and the fix.
