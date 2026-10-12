@@ -7,7 +7,7 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 <table>
 <tr>
 <td width="50%" align="center" valign="middle">
-<a href="https://www.devrecated.com"><img src="assets/devrecated-lockup.svg" alt="Devrecated Solutions" width="100%"></a>
+<a href="https://www.devrecated.com"><img src="assets/devrecated-lockup.png" alt="Devrecated Solutions" width="100%"></a>
 </td>
 <td width="50%" align="center" valign="middle">
 <a href="https://openhat.devrecated.com"><img src="assets/openhat-lockup.svg" alt="OpenHat Security" width="100%"></a>
