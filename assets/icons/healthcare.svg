@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Acme Healthcare">
+  <title>Acme Healthcare</title>
+<rect width="40" height="40" rx="9" fill="#121212"/>
+<rect x="0.8" y="0.8" width="38.4" height="38.4" rx="8.2" fill="none" stroke="#b8956a" stroke-opacity="0.55" stroke-width="1.25"/>
+<rect x="11" y="11" width="18" height="18" rx="4" fill="none" stroke="#f4f1ea" stroke-width="1.6"/>
+<path d="M20 15 v10 M15 20 h10" stroke="#b8956a" stroke-width="1.7" stroke-linecap="round"/>
+</svg>

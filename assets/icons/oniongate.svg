@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="oniongate">
+  <title>oniongate</title>
+<rect width="40" height="40" rx="9" fill="#121212"/>
+<rect x="0.8" y="0.8" width="38.4" height="38.4" rx="8.2" fill="none" stroke="#e10600" stroke-opacity="0.55" stroke-width="1.25"/>
+<ellipse cx="20" cy="21" rx="9" ry="6.5" fill="none" stroke="#f4f1ea" stroke-width="1.5"/>
+<ellipse cx="20" cy="21" rx="5.2" ry="3.6" fill="none" stroke="#f4f1ea" stroke-width="1.5"/>
+<circle cx="20" cy="21" r="1.5" fill="#e10600"/>
+<path d="M20 11 v3" stroke="#e10600" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

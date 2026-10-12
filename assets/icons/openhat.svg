@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="OpenHat Security">
+  <title>OpenHat Security</title>
+<rect width="40" height="40" rx="9" fill="#121212"/>
+<rect x="0.8" y="0.8" width="38.4" height="38.4" rx="8.2" fill="none" stroke="#e10600" stroke-opacity="0.55" stroke-width="1.25"/>
+<g transform="translate(5.00 9.54) scale(0.144231) translate(-16 -43)">
+      <ellipse cx="120" cy="160" rx="104" ry="28" fill="#f4f1ea"/>
+      <path fill="#f4f1ea" d="M52 154 C52 154 54 90 78 68 C94 50 108 44 120 43 C132 44 146 50 162 68 C186 90 188 154 188 154 Z"/>
+      <path fill="#f4f1ea" d="M84 74 C98 56 110 50 120 49 C130 50 142 56 156 74 C146 82 134 86 120 86 C106 86 94 82 84 74 Z"/>
+      <rect x="56" y="136" width="128" height="15" rx="2" fill="#121212"/>
+      <path fill="#f4f1ea" d="M52 154 C80 146 160 146 188 154 L188 160 C160 152 80 152 52 160 Z"/>
+      <rect x="110" y="80" width="36" height="50" rx="2" fill="#f4f1ea" stroke="#121212" stroke-width="6"/>
+      <path fill="#222222" stroke="#121212" stroke-width="2.25" stroke-linejoin="round" d="M110 80 L70 66 L70 144 L110 130 Z"/>
+      <path fill="#121212" d="M110 80 L114 83 L114 127 L110 130 Z"/>
+      <circle cx="80" cy="105" r="3.4" fill="#121212"/>
+      <path fill="#e10600" d="M144 88 L178 62 L162 98 L196 108 L160 114 L176 152 L144 124 L128 148 L134 114 L102 106 L134 100 Z"/>
+    </g>
+</svg>

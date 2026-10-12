@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="truffles">
+  <title>truffles</title>
+<rect width="40" height="40" rx="9" fill="#121212"/>
+<rect x="0.8" y="0.8" width="38.4" height="38.4" rx="8.2" fill="none" stroke="#fb923c" stroke-opacity="0.55" stroke-width="1.25"/>
+<g fill="#fb923c" transform="translate(14.60 26.00) scale(0.018000 -0.018000)"><path d="M237 0V617H46V730H554V617H363V0Z" transform="translate(0.00 0.00)"/></g>
+</svg>
