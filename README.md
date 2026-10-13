@@ -15,58 +15,35 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 </tr>
 </table>
 
-## Activity
-
-<p align="center">
-  <img src="https://ghchart.rshah.org/8a6230/adamsiwiec1" alt="GitHub contribution graph" width="100%">
-</p>
-
 ## Top repositories
 
 Public repos across [adamsiwiec1](https://github.com/adamsiwiec1), [devrecated](https://github.com/devrecated), and [openhat-security](https://github.com/openhat-security), ranked by stars.
 
 <table>
 <tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run"><img src="assets/icons/mcp.svg" width="36" height="36" alt=""></a><br>
-<a href="https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run"><strong>mcp-sse-authenticated-cloud-run</strong></a> · 23 stars · TypeScript<br>
-MCP over SSE on Cloud Run, authenticated with IAM.
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/adamsiwiec1/monorepo-secret-manager"><img src="assets/icons/secrets.svg" width="36" height="36" alt=""></a><br>
-<a href="https://github.com/adamsiwiec1/monorepo-secret-manager"><strong>monorepo-secret-manager</strong></a> · 5 stars · TypeScript<br>
-Sync env files, SSH keys, and TLS bundles across a monorepo.<br>
-<a href="https://www.npmjs.com/package/monorepo-secret-manager">npm</a>
-
-</td>
+<td valign="middle" width="28"><img src="assets/icons/mcp.svg" width="22" height="22" alt=""></td>
+<td valign="middle"><a href="https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run"><strong>mcp-sse-authenticated-cloud-run</strong></a> · TypeScript · MCP over SSE on Cloud Run, IAM auth</td>
+<td valign="middle" align="right" width="72">23 stars</td>
 </tr>
 <tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/adamsiwiec1/stockPredictionsML"><img src="assets/icons/docs.svg" width="36" height="36" alt=""></a><br>
-<a href="https://github.com/adamsiwiec1/stockPredictionsML"><strong>stockPredictionsML</strong></a> · 5 stars · Python<br>
-Stock prediction model on yfinance.
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/adamsiwiec1/SQLStockScraper"><img src="assets/icons/s3.svg" width="36" height="36" alt=""></a><br>
-<a href="https://github.com/adamsiwiec1/SQLStockScraper"><strong>SQLStockScraper</strong></a> · 3 stars · Python<br>
-Pull yfinance indicators into SQL for thousands of tickers.
-
-</td>
+<td valign="middle"><img src="assets/icons/secrets.svg" width="22" height="22" alt=""></td>
+<td valign="middle"><a href="https://github.com/adamsiwiec1/monorepo-secret-manager"><strong>monorepo-secret-manager</strong></a> · TypeScript · Sync secrets across a monorepo</td>
+<td valign="middle" align="right">5 stars</td>
 </tr>
 <tr>
-<td colspan="2" valign="top">
-
-<a href="https://github.com/adamsiwiec1/powershell-scripts"><img src="assets/icons/cli.svg" width="36" height="36" alt=""></a><br>
-<a href="https://github.com/adamsiwiec1/powershell-scripts"><strong>powershell-scripts</strong></a> · 3 stars · PowerShell<br>
-Collection of PowerShell scripts.
-
-</td>
+<td valign="middle"><img src="assets/icons/docs.svg" width="22" height="22" alt=""></td>
+<td valign="middle"><a href="https://github.com/adamsiwiec1/stockPredictionsML"><strong>stockPredictionsML</strong></a> · Python · Stock prediction model on yfinance</td>
+<td valign="middle" align="right">5 stars</td>
+</tr>
+<tr>
+<td valign="middle"><img src="assets/icons/s3.svg" width="22" height="22" alt=""></td>
+<td valign="middle"><a href="https://github.com/adamsiwiec1/SQLStockScraper"><strong>SQLStockScraper</strong></a> · Python · yfinance indicators into SQL</td>
+<td valign="middle" align="right">3 stars</td>
+</tr>
+<tr>
+<td valign="middle"><img src="assets/icons/cli.svg" width="22" height="22" alt=""></td>
+<td valign="middle"><a href="https://github.com/adamsiwiec1/powershell-scripts"><strong>powershell-scripts</strong></a> · PowerShell · Collection of PowerShell scripts</td>
+<td valign="middle" align="right">3 stars</td>
 </tr>
 </table>
 
