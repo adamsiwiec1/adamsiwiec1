@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="adam siwiec, founder. FreeTech, Devrecated, and OpenHat." width="100%">
+  <img src="assets/banner.svg" alt="adam siwiec. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
 I run two companies. **Devrecated Solutions** puts process, gates, and evidence around AI coding agents. **OpenHat Security** does authorized offensive security against an AI-scale attack surface, then leaves the findings, the logs, and the fix.
 
 <table>
 <tr>
-<td width="50%" align="center" valign="middle">
-<a href="https://www.devrecated.com"><img src="assets/devrecated-lockup.png" alt="Devrecated Solutions" width="100%"></a>
+<td valign="middle">
+<a href="https://www.devrecated.com"><img src="assets/devrecated-lockup.png" alt="Devrecated Solutions" width="200"></a>
 </td>
-<td width="50%" align="center" valign="middle">
-<a href="https://openhat.devrecated.com"><img src="assets/openhat-lockup.svg" alt="OpenHat Security" width="100%"></a>
+<td valign="middle">
+<a href="https://openhat.devrecated.com"><img src="assets/openhat-lockup.svg" alt="OpenHat Security" width="200"></a>
 </td>
 </tr>
 </table>
