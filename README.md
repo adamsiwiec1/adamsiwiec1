@@ -19,18 +19,11 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 
 <!-- activity:start -->
 
-<table width="100%">
-<tr>
-<td width="46%" valign="middle">
+<p align="center">
 <a href="https://github.com/adamsiwiec1">
-<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">
+<img src="assets/activity-panel.svg" alt="Contributions and activity for the last 90 days" width="100%">
 </a>
-</td>
-<td width="54%" valign="middle">
-<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">
-</td>
-</tr>
-</table>
+</p>
 
 Repos contributed to in the last 90 days (63):
 

@@ -15,7 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 OUT_STATS = ROOT / "assets" / "activity-stats.svg"
 OUT_GRAPH = ROOT / "assets" / "contribution-graph-90d.svg"
+OUT_PANEL = ROOT / "assets" / "activity-panel.svg"
 OUT_JSON = ROOT / "assets" / "activity-stats.json"
+# Full README content width — one SVG so GitHub can't leave a dead column.
+PANEL_WIDTH = 920
 LOGIN = "adamsiwiec1"
 USER_ID = "MDQ6VXNlcjczMDg1OTI3"
 WINDOWS = (90, 60, 30, 7)
@@ -136,8 +139,7 @@ def level_for_count(count: int, max_count: int) -> int:
     return 4
 
 
-def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
-    """Compact GitHub-style contribution calendar for ~90 days."""
+def _calendar_weeks(days: list[dict], as_of: dt.datetime) -> tuple[list[list[dict | None]], int]:
     if not days:
         days = []
     by_date = {d["date"]: d for d in days}
@@ -164,15 +166,24 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
                 )
             cursor += dt.timedelta(days=1)
         weeks.append(week)
-
     max_count = max((d["contributionCount"] for d in days), default=0)
-    # Larger cells — sits beside activity in a full-width 46/54 split.
-    cell = 16
-    gap = 4
+    return weeks, max_count
+
+
+def _graph_body(
+    weeks: list[list[dict | None]],
+    max_count: int,
+    *,
+    ox: int = 0,
+    oy: int = 0,
+    cell: int = 14,
+    gap: int = 3,
+) -> tuple[list[str], int, int]:
+    """Return (svg elements, width, height) for the contribution calendar."""
     left = 18
-    top = 22
+    top = 24
     width = left + len(weeks) * (cell + gap) + 8
-    height = top + 7 * (cell + gap) + 14
+    height = top + 7 * (cell + gap) + 16
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -187,23 +198,19 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
                 break
 
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Contribution graph, last 90 days">',
-        "<title>Contribution graph (last 90 days)</title>",
-        f'<rect width="{width}" height="{height}" rx="6" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
-        f'<text x="8" y="12" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="9" font-weight="700">Contributions</text>',
-        f'<text x="{width - 8}" y="12" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">90d</text>',
+        f'<text x="{ox + 10}" y="{oy + 14}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Contributions</text>',
+        f'<text x="{ox + width - 10}" y="{oy + 14}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">90d</text>',
     ]
     for i, label in month_labels:
-        x = left + i * (cell + gap)
+        x = ox + left + i * (cell + gap)
         parts.append(
-            f'<text x="{x}" y="{top - 3}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
+            f'<text x="{x}" y="{oy + top - 4}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="9">{label}</text>'
         )
 
-    day_labels = {1: "M", 3: "W", 5: "F"}
-    for weekday, label in day_labels.items():
-        y = top + weekday * (cell + gap) + cell - 1
+    for weekday, label in {1: "M", 3: "W", 5: "F"}.items():
+        y = oy + top + weekday * (cell + gap) + cell - 1
         parts.append(
-            f'<text x="4" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
+            f'<text x="{ox + 5}" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
         )
 
     for wi, week in enumerate(weeks):
@@ -213,28 +220,137 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
             weekday = day.get("weekday")
             if weekday is None:
                 weekday = (dt.date.fromisoformat(day["date"]).weekday() + 1) % 7
-            x = left + wi * (cell + gap)
-            y = top + weekday * (cell + gap)
+            x = ox + left + wi * (cell + gap)
+            y = oy + top + weekday * (cell + gap)
             count = day["contributionCount"]
             fill = GRAPH_LEVELS[level_for_count(count, max_count)]
             parts.append(
-                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" fill="{fill}">'
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{fill}">'
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
 
-    lx = width - 8 - 5 * (cell + gap) - 32
-    ly = height - 12
+    lx = ox + width - 10 - 5 * (cell + gap) - 36
+    ly = oy + height - 14
     parts.append(
-        f'<text x="{lx - 20}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">Less</text>'
+        f'<text x="{lx - 22}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">Less</text>'
     )
     for i, color in enumerate(GRAPH_LEVELS):
         parts.append(
-            f'<rect x="{lx + i * (cell + gap)}" y="{ly}" width="{cell}" height="{cell}" rx="1" fill="{color}"/>'
+            f'<rect x="{lx + i * (cell + gap)}" y="{ly}" width="{cell}" height="{cell}" rx="2" fill="{color}"/>'
         )
     parts.append(
-        f'<text x="{lx + 5 * (cell + gap) + 2}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">More</text>'
+        f'<text x="{lx + 5 * (cell + gap) + 3}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">More</text>'
+    )
+    return parts, width, height
+
+
+def _stats_body(
+    rows: list[dict],
+    as_of: dt.datetime,
+    lifetime: dict | None,
+    *,
+    ox: int,
+    oy: int,
+    width: int,
+    height: int,
+) -> list[str]:
+    """Activity table drawn into a panel of the given size (fills width)."""
+    row_h = max(18, (height - 56) // max(len(rows), 1))
+    y_title = oy + 16
+    y_life = oy + 32
+    y_cols = oy + 48
+    y0 = oy + 66
+    # Five columns evenly across the full panel (last col near the right edge).
+    usable = width - 28
+    xs = [ox + 14 + int(usable * i / 4) for i in range(5)]
+    parts = [
+        f'<text x="{ox + 14}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
+        f'<text x="{ox + width - 14}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d")}</text>',
+    ]
+    if lifetime:
+        parts.append(
+            f'<text x="{ox + 14}" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">'
+            f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
+            f"</text>"
+        )
+    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
+        parts.append(
+            f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">{label}</text>'
+        )
+    y = y0
+    for row in rows:
+        active, window = row["consistency"]
+        vals = (
+            (xs[0], GRAPH_TEXT, f'last {row["days"]}d', False),
+            (xs[1], "#3fb950", nicer(row["activity"]), True),
+            (xs[2], "#58a6ff", nicer(row["commits"]), True),
+            (xs[3], "#d29922", nicer(row["edits"]), True),
+            (xs[4], "#a371f7", f"{active}/{window}", True),
+        )
+        for x, color, text, bold in vals:
+            weight = ' font-weight="700"' if bold else ""
+            parts.append(
+                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="12"{weight}>{text}</text>'
+            )
+        y += row_h
+    return parts
+
+
+def render_activity_panel(
+    days: list[dict],
+    rows: list[dict],
+    as_of: dt.datetime,
+    lifetime: dict | None = None,
+) -> str:
+    """Single full-width SVG: contributions | activity (no dead horizontal space)."""
+    weeks, max_count = _calendar_weeks(days, as_of)
+    pad = 10
+    gap = 12
+    # Graph gets ~44% of the inner width; activity fills the rest.
+    inner = PANEL_WIDTH - 2 * pad
+    graph_w_target = int(inner * 0.44)
+    # Pick cell size so the calendar roughly fills its column.
+    nweeks = max(len(weeks), 1)
+    cell = max(10, min(18, (graph_w_target - 30) // nweeks - 3))
+    g_gap = 3 if cell < 14 else 4
+    g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
+    height = g_h + 2 * pad
+    stats_x = pad + g_w + gap
+    stats_w = PANEL_WIDTH - stats_x - pad
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{PANEL_WIDTH}" height="{height}" viewBox="0 0 {PANEL_WIDTH} {height}" role="img" aria-label="Contributions and activity, last 90 days">',
+        "<title>Contributions and activity</title>",
+        f'<rect width="{PANEL_WIDTH}" height="{height}" rx="8" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
+        # Subtle divider between panels
+        f'<line x1="{stats_x - gap // 2}" y1="{pad + 8}" x2="{stats_x - gap // 2}" y2="{height - pad - 8}" stroke="{GRAPH_BORDER}" stroke-width="1"/>',
+    ]
+    parts.extend(g_parts)
+    parts.extend(
+        _stats_body(
+            rows,
+            as_of,
+            lifetime,
+            ox=stats_x,
+            oy=pad,
+            width=stats_w,
+            height=g_h,
+        )
     )
     parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
+def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
+    """Standalone contribution calendar (kept for assets / debugging)."""
+    weeks, max_count = _calendar_weeks(days, as_of)
+    body, width, height = _graph_body(weeks, max_count, cell=16, gap=4)
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Contribution graph, last 90 days">',
+        "<title>Contribution graph (last 90 days)</title>",
+        f'<rect width="{width}" height="{height}" rx="6" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
+        *body,
+        "</svg>",
+    ]
     return "\n".join(parts) + "\n"
 
 
@@ -478,23 +594,16 @@ def repos_row_html(repos: list[dict]) -> str:
 
 
 def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> str:
-    # Full-width pair; SVG aspect ratios are tuned so both columns share height.
+    # One full-width SVG — avoids GitHub table/image shrink-wrap dead space.
     return "\n".join(
         [
             START_MARK,
             "",
-            '<table width="100%">',
-            "<tr>",
-            '<td width="46%" valign="middle">',
+            '<p align="center">',
             '<a href="https://github.com/adamsiwiec1">',
-            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">',
+            '<img src="assets/activity-panel.svg" alt="Contributions and activity for the last 90 days" width="100%">',
             "</a>",
-            "</td>",
-            '<td width="54%" valign="middle">',
-            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">',
-            "</td>",
-            "</tr>",
-            "</table>",
+            "</p>",
             "",
             f"Repos contributed to in the last 90 days ({len(repos)}):",
             "",
@@ -556,9 +665,11 @@ def main() -> int:
     repos = by_window[90]["repos"]
 
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
+    panel_svg = render_activity_panel(calendar_days, rows, now, lifetime=lifetime)
+    OUT_PANEL.write_text(panel_svg)
+    # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
-    # Same height as the graph; width ratio ≈ 54/46 so full-width columns align.
     graph_h = int(re.search(r'height="(\d+)"', graph_svg).group(1))
     graph_w = int(re.search(r'width="(\d+)"', graph_svg).group(1))
     OUT_STATS.write_text(
