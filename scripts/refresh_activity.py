@@ -18,7 +18,7 @@ OUT_GRAPH = ROOT / "assets" / "contribution-graph-90d.svg"
 OUT_PANEL = ROOT / "assets" / "activity-panel.svg"
 OUT_JSON = ROOT / "assets" / "activity-stats.json"
 # Full README content width — one SVG so GitHub can't leave a dead column.
-PANEL_WIDTH = 920
+PANEL_WIDTH = 888
 LOGIN = "adamsiwiec1"
 USER_ID = "MDQ6VXNlcjczMDg1OTI3"
 WINDOWS = (90, 60, 30, 7)
@@ -254,43 +254,49 @@ def _stats_body(
     width: int,
     height: int,
 ) -> list[str]:
-    """Activity table drawn into a panel of the given size (fills width)."""
+    """Activity table drawn into a panel — last column right-anchored so it never clips."""
     row_h = max(18, (height - 56) // max(len(rows), 1))
     y_title = oy + 16
     y_life = oy + 32
     y_cols = oy + 48
     y0 = oy + 66
-    # Five columns evenly across the full panel (last col near the right edge).
-    usable = width - 28
-    xs = [ox + 14 + int(usable * i / 4) for i in range(5)]
+    inset = 14
+    right = ox + width - inset
+    # Five even slots; days is right-anchored in the last slot so "71/90" never clips.
+    slot = (width - 2 * inset) / 5
+    xs = [ox + inset + int(slot * i) for i in range(4)]
     parts = [
-        f'<text x="{ox + 14}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
-        f'<text x="{ox + width - 14}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d")}</text>',
+        f'<text x="{ox + inset}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
+        f'<text x="{right}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d")}</text>',
     ]
     if lifetime:
         parts.append(
-            f'<text x="{ox + 14}" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">'
+            f'<text x="{ox + inset}" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">'
             f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
             f"</text>"
         )
-    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
+    for x, label in zip(xs, ("window", "activity", "commits", "edits")):
         parts.append(
             f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">{label}</text>'
         )
+    parts.append(
+        f'<text x="{right}" y="{y_cols}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">days</text>'
+    )
     y = y0
     for row in rows:
         active, window = row["consistency"]
         vals = (
-            (xs[0], GRAPH_TEXT, f'last {row["days"]}d', False),
-            (xs[1], "#3fb950", nicer(row["activity"]), True),
-            (xs[2], "#58a6ff", nicer(row["commits"]), True),
-            (xs[3], "#d29922", nicer(row["edits"]), True),
-            (xs[4], "#a371f7", f"{active}/{window}", True),
+            (xs[0], "start", GRAPH_TEXT, f'last {row["days"]}d', False),
+            (xs[1], "start", "#3fb950", nicer(row["activity"]), True),
+            (xs[2], "start", "#58a6ff", nicer(row["commits"]), True),
+            (xs[3], "start", "#d29922", nicer(row["edits"]), True),
+            (right, "end", "#a371f7", f"{active}/{window}", True),
         )
-        for x, color, text, bold in vals:
+        for x, anchor, color, text, bold in vals:
             weight = ' font-weight="700"' if bold else ""
+            anchor_attr = f' text-anchor="{anchor}"' if anchor != "start" else ""
             parts.append(
-                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="12"{weight}>{text}</text>'
+                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="12"{weight}{anchor_attr}>{text}</text>'
             )
         y += row_h
     return parts
@@ -302,17 +308,16 @@ def render_activity_panel(
     as_of: dt.datetime,
     lifetime: dict | None = None,
 ) -> str:
-    """Single full-width SVG: contributions | activity (no dead horizontal space)."""
+    """Single full-width SVG: larger contributions | compact activity (no clip)."""
     weeks, max_count = _calendar_weeks(days, as_of)
-    pad = 10
-    gap = 12
-    # Graph gets ~44% of the inner width; activity fills the rest.
+    pad = 12
+    gap = 14
+    # Contributions take most of the row; activity stays compact on the right.
     inner = PANEL_WIDTH - 2 * pad
-    graph_w_target = int(inner * 0.44)
-    # Pick cell size so the calendar roughly fills its column.
+    graph_w_target = int(inner * 0.58)
     nweeks = max(len(weeks), 1)
-    cell = max(10, min(18, (graph_w_target - 30) // nweeks - 3))
-    g_gap = 3 if cell < 14 else 4
+    cell = max(14, min(26, (graph_w_target - 32) // nweeks - 3))
+    g_gap = 4 if cell >= 16 else 3
     g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
@@ -321,7 +326,6 @@ def render_activity_panel(
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{PANEL_WIDTH}" height="{height}" viewBox="0 0 {PANEL_WIDTH} {height}" role="img" aria-label="Contributions and activity, last 90 days">',
         "<title>Contributions and activity</title>",
         f'<rect width="{PANEL_WIDTH}" height="{height}" rx="8" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
-        # Subtle divider between panels
         f'<line x1="{stats_x - gap // 2}" y1="{pad + 8}" x2="{stats_x - gap // 2}" y2="{height - pad - 8}" stroke="{GRAPH_BORDER}" stroke-width="1"/>',
     ]
     parts.extend(g_parts)
