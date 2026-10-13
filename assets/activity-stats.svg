@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="214" viewBox="0 0 900 214" role="img" aria-label="Activity stats">
+<title>Activity, commits, and line edits</title>
+<rect width="900" height="214" rx="12" fill="#0d1117" stroke="#30363d"/>
+<text x="24" y="28" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700">Activity</text>
+<text x="876" y="28" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">as of 2026-10-13 UTC</text>
+<text x="24" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">window</text>
+<text x="200" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">activity</text>
+<text x="400" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">commits</text>
+<text x="600" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">line edits</text>
+<text x="24" y="78" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 90d</text>
+<text x="200" y="78" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">1.2k</text>
+<text x="400" y="78" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">910</text>
+<text x="600" y="78" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">9.6M</text>
+<text x="24" y="110" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 60d</text>
+<text x="200" y="110" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">1.1k</text>
+<text x="400" y="110" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">865</text>
+<text x="600" y="110" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">8.9M</text>
+<text x="24" y="142" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 30d</text>
+<text x="200" y="142" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">801</text>
+<text x="400" y="142" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">635</text>
+<text x="600" y="142" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">2.8M</text>
+<text x="24" y="174" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 7d</text>
+<text x="200" y="174" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">189</text>
+<text x="400" y="174" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">153</text>
+<text x="600" y="174" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">170.7k</text>
+</svg>

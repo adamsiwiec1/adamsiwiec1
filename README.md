@@ -23,6 +23,82 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
   </a>
 </p>
 
+<!-- activity:start -->
+
+<p align="center"><img src="assets/activity-stats.svg" alt="Activity, commits, and line edits for the last 90, 60, 30, and 7 days" width="100%"></p>
+
+Repos contributed to in the last 90 days (63):
+
+<table>
+<tr>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/runhug">runhug</a>&nbsp;<code>152</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/autodevelop">autodevelop</a>&nbsp;<code>147</code></td>
+<td valign="middle" nowrap><a href="https://github.com/the-freetech-company/otw-portal-react">otw-portal-react</a>&nbsp;<code>125</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/ohqs">ohqs</a>&nbsp;<code>37</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/adamsiwiec1">adamsiwiec1</a>&nbsp;<code>35</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/oniongate">oniongate</a>&nbsp;<code>34</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/healthcare-marketing-demo">healthcare-marketing-demo</a>&nbsp;<code>32</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/truffles">truffles</a>&nbsp;<code>32</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/docgen">docgen</a>&nbsp;<code>31</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/autodevelop-cli">autodevelop-cli</a>&nbsp;<code>21</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/devrecated-www">devrecated-www</a>&nbsp;<code>18</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/ios-max-security">ios-max-security</a>&nbsp;<code>18</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/runhug-web">runhug-web</a>&nbsp;<code>17</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/artwork-studio">artwork-studio</a>&nbsp;<code>15</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/eileen_artwork_gallery">eileen_artwork_gallery</a>&nbsp;<code>14</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/openhat-www">openhat-www</a>&nbsp;<code>13</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/autodevelop-docs">autodevelop-docs</a>&nbsp;<code>10</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/.github">.github</a>&nbsp;<code>10</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/acme-portal">acme-portal</a>&nbsp;<code>9</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/hfpacks">hfpacks</a>&nbsp;<code>8</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/homebrew-tap">homebrew-tap</a>&nbsp;<code>8</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/truffles-web">truffles-web</a>&nbsp;<code>8</code></td>
+<td valign="middle" nowrap><a href="https://github.com/the-freetech-company/otw-marketing">otw-marketing</a>&nbsp;<code>8</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/artwork-studio-marketing">artwork-studio-marketing</a>&nbsp;<code>7</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/operations">operations</a>&nbsp;<code>7</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/editable-website">editable-website</a>&nbsp;<code>6</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/foss-template">foss-template</a>&nbsp;<code>6</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/sales">sales</a>&nbsp;<code>6</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/cli-marketing-template">cli-marketing-template</a>&nbsp;<code>5</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/phishkit">phishkit</a>&nbsp;<code>5</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/backblaze-b2-backup-audit">backblaze-b2-backup-audit</a>&nbsp;<code>4</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/autodevelop-www">autodevelop-www</a>&nbsp;<code>4</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/discord-api">discord-api</a>&nbsp;<code>4</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/scoop-bucket">scoop-bucket</a>&nbsp;<code>4</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/degen-analyzer">degen-analyzer</a>&nbsp;<code>3</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/rclone-backblaze-b2-setup">rclone-backblaze-b2-setup</a>&nbsp;<code>3</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/.github">.github</a>&nbsp;<code>3</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/features">features</a>&nbsp;<code>3</code></td>
+<td valign="middle" nowrap><a href="https://github.com/the-freetech-company/contracts">contracts</a>&nbsp;<code>3</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/dot-cursor">dot-cursor</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/README">README</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/acme-portal-lytenyte">acme-portal-lytenyte</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/grokbot">grokbot</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/homebrew-tap">homebrew-tap</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/layoff-analyzer">layoff-analyzer</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/scoop-bucket">scoop-bucket</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/openhat-search">openhat-search</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/packages">packages</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/the-freetech-company/bluewire-legal-backup">bluewire-legal-backup</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/unslothai/unsloth">unsloth</a>&nbsp;<code>2</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/awesome-docs-generator">awesome-docs-generator</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/chocolatey-packages">chocolatey-packages</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/homebrew-tap">homebrew-tap</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/monorepo-secret-manager">monorepo-secret-manager</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/packages">packages</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/scoop-bucket">scoop-bucket</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/crossfire-demo">crossfire-demo</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/grokbot-skills">grokbot-skills</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/devrecated/packages">packages</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/exploitgenie">exploitgenie</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/openhat-security/go-cli-packaging-template">go-cli-packaging-template</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/term7/MacOS-Privacy-and-Security-Enhancements">MacOS-Privacy-and-Security-Enhancements</a>&nbsp;<code>1</code></td>
+<td valign="middle" nowrap><a href="https://github.com/the-freetech-company/otw-fb-marketplace-mcp-testing">otw-fb-marketplace-mcp-testing</a>&nbsp;<code>1</code></td>
+</tr>
+</table>
+
+<!-- activity:end -->
+
 ## Top repositories
 
 Public repos across [adamsiwiec1](https://github.com/adamsiwiec1), [devrecated](https://github.com/devrecated), and [openhat-security](https://github.com/openhat-security), ranked by stars.
