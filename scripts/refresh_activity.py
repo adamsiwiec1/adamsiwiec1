@@ -176,14 +176,16 @@ def _graph_body(
     *,
     ox: int = 0,
     oy: int = 0,
-    cell: int = 14,
+    cell: int = 11,
     gap: int = 3,
 ) -> tuple[list[str], int, int]:
     """Return (svg elements, width, height) for the contribution calendar."""
-    left = 18
-    top = 24
-    width = left + len(weeks) * (cell + gap) + 8
-    height = top + 7 * (cell + gap) + 16
+    left = 14
+    # Title on its own row; months sit clearly below so they never collide.
+    title_y = 11
+    top = 36
+    width = left + len(weeks) * (cell + gap) + 6
+    height = top + 7 * (cell + gap) + 12
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -198,19 +200,19 @@ def _graph_body(
                 break
 
     parts = [
-        f'<text x="{ox + 10}" y="{oy + 14}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Contributions</text>',
-        f'<text x="{ox + width - 10}" y="{oy + 14}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">90d</text>',
+        f'<text x="{ox + 8}" y="{oy + title_y}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="10" font-weight="700">Contributions</text>',
+        f'<text x="{ox + width - 8}" y="{oy + title_y}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">90d</text>',
     ]
     for i, label in month_labels:
         x = ox + left + i * (cell + gap)
         parts.append(
-            f'<text x="{x}" y="{oy + top - 4}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="9">{label}</text>'
+            f'<text x="{x}" y="{oy + top - 5}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
         )
 
     for weekday, label in {1: "M", 3: "W", 5: "F"}.items():
         y = oy + top + weekday * (cell + gap) + cell - 1
         parts.append(
-            f'<text x="{ox + 5}" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
+            f'<text x="{ox + 4}" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
         )
 
     for wi, week in enumerate(weeks):
@@ -225,21 +227,21 @@ def _graph_body(
             count = day["contributionCount"]
             fill = GRAPH_LEVELS[level_for_count(count, max_count)]
             parts.append(
-                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{fill}">'
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" fill="{fill}">'
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
 
-    lx = ox + width - 10 - 5 * (cell + gap) - 36
-    ly = oy + height - 14
+    lx = ox + width - 8 - 5 * (cell + gap) - 28
+    ly = oy + height - 12
     parts.append(
-        f'<text x="{lx - 22}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">Less</text>'
+        f'<text x="{lx - 18}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">Less</text>'
     )
     for i, color in enumerate(GRAPH_LEVELS):
         parts.append(
-            f'<rect x="{lx + i * (cell + gap)}" y="{ly}" width="{cell}" height="{cell}" rx="2" fill="{color}"/>'
+            f'<rect x="{lx + i * (cell + gap)}" y="{ly}" width="{cell}" height="{cell}" rx="1" fill="{color}"/>'
         )
     parts.append(
-        f'<text x="{lx + 5 * (cell + gap) + 3}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">More</text>'
+        f'<text x="{lx + 5 * (cell + gap) + 2}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">More</text>'
     )
     return parts, width, height
 
@@ -308,16 +310,16 @@ def render_activity_panel(
     as_of: dt.datetime,
     lifetime: dict | None = None,
 ) -> str:
-    """Single full-width SVG: larger contributions | compact activity (no clip)."""
+    """Single full-width SVG: compact contributions | activity."""
     weeks, max_count = _calendar_weeks(days, as_of)
-    pad = 12
-    gap = 14
-    # Contributions take most of the row; activity stays compact on the right.
+    pad = 10
+    gap = 12
+    # Compact calendar on the left; activity fills the remainder.
     inner = PANEL_WIDTH - 2 * pad
-    graph_w_target = int(inner * 0.58)
+    graph_w_target = int(inner * 0.38)
     nweeks = max(len(weeks), 1)
-    cell = max(14, min(26, (graph_w_target - 32) // nweeks - 3))
-    g_gap = 4 if cell >= 16 else 3
+    cell = max(9, min(11, (graph_w_target - 28) // nweeks - 2))
+    g_gap = 2
     g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
