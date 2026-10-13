@@ -623,24 +623,15 @@ def render_repos_strip_svg(repos: list[dict], width: int = PANEL_WIDTH, height: 
     return "\n".join(parts) + "\n"
 
 
-def repos_grid_html(repos: list[dict], per_row: int = 4) -> str:
-    """Wrapped chip table — GitHub strips overflow CSS, so wrap instead of a fake scroller."""
-    rows: list[str] = []
-    for i in range(0, len(repos), per_row):
-        chunk = repos[i : i + per_row]
-        tds = []
-        for repo in chunk:
-            short = repo["name"].split("/")[-1]
-            tds.append(
-                '<td valign="middle">'
-                f'<a href="https://github.com/{repo["name"]}"><code>{short}</code></a>'
-                f" · {repo['count']}"
-                "</td>"
-            )
-        while len(tds) < per_row:
-            tds.append("<td></td>")
-        rows.append("<tr>\n" + "\n".join(tds) + "\n</tr>")
-    return "<table width=\"100%\">\n" + "\n".join(rows) + "\n</table>"
+def repos_inline_html(repos: list[dict]) -> str:
+    """One compact line of linked names — expand via <details> in the README."""
+    bits = []
+    for repo in repos:
+        short = repo["name"].split("/")[-1]
+        bits.append(
+            f'<a href="https://github.com/{repo["name"]}">{short}</a>&nbsp;{repo["count"]}'
+        )
+    return " · ".join(bits)
 
 
 def render_readme_block() -> str:
@@ -665,13 +656,12 @@ def render_contributed_block(repos: list[dict]) -> str:
         [
             CONTRIB_START,
             "",
-            f"### Repos contributed to in the last 90 days ({len(repos)})",
+            "<details>",
+            f"<summary>Repos contributed to in the last 90 days ({len(repos)})</summary>",
             "",
-            '<p align="center">',
-            '<img src="assets/repos-90d.svg" alt="Repos contributed to in the last 90 days" width="100%">',
-            "</p>",
+            repos_inline_html(repos),
             "",
-            repos_grid_html(repos),
+            "</details>",
             "",
             CONTRIB_END,
             "",
