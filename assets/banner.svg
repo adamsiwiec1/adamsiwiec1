@@ -9,7 +9,7 @@
   <rect x="58" y="124" width="220" height="3" fill="#141414"/>
 
   <!-- languages / skills -->
-  <g transform="translate(530 8)">
+  <g transform="translate(458 8)">
     <g transform="translate(4 0) scale(1.15)">
       <circle cx="18" cy="18" r="17" fill="#1a1a1a"/>
       <circle cx="18" cy="18" r="7.2" fill="none" stroke="#DEA584" stroke-width="3.2"/>
@@ -29,28 +29,28 @@
     </g>
     <text x="22" y="58" text-anchor="middle" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">rust</text>
   </g>
-  <g transform="translate(710 8)">
+  <g transform="translate(740 8)">
     <g transform="translate(2 2) scale(1.05)">
       <rect width="40" height="36" rx="8" fill="#00ADD8"/>
       <text x="20" y="24" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Go</text>
     </g>
     <text x="22" y="58" text-anchor="middle" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">go</text>
   </g>
-  <g transform="translate(890 8)">
+  <g transform="translate(1022 8)">
     <g transform="translate(4 2) scale(1.05)">
       <rect width="36" height="36" rx="5" fill="#3178C6"/>
       <text x="18" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800">TS</text>
     </g>
     <text x="22" y="58" text-anchor="middle" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">typescript</text>
   </g>
-  <g transform="translate(530 96)">
+  <g transform="translate(458 96)">
     <g transform="translate(4 0) scale(1.45)">
       <path fill="#3776AB" d="M15.85 1.2c-4.7 0-3.9 2.05-3.9 2.05l.01 2.25h4.05v.7H9.3S5.1 6.1 5.1 10.55c0 4.45 2.5 4.28 2.5 4.28h1.48v-2.05s-.08-2.5 2.42-2.5h4.2s2.34 0 2.34-2.57V4.55S20.4 1.2 15.85 1.2zm-2.1 1.7c.54 0 .98.45.98 1 0 .56-.44 1.01-.98 1.01-.55 0-1-.45-1-1.01 0-.55.45-1 .98-1z"/>
       <path fill="#FFD43B" d="M16.15 23.8c4.7 0 3.9-2.05 3.9-2.05l-.01-2.25h-4.05v-.7h5.71s4.2.1 4.2-4.35c0-4.45-2.5-4.28-2.5-4.28h-1.48v2.05s.08 2.5-2.42 2.5h-4.2s-2.34 0-2.34 2.57v3.95s1.05 3.56 5.19 3.56zm2.1-1.7c-.54 0-.98-.45-.98-1 0-.56.44-1.01.98-1.01.55 0 1 .45 1 1.01 0 .55-.45 1-.98 1z"/>
     </g>
     <text x="22" y="58" text-anchor="middle" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">python</text>
   </g>
-  <g transform="translate(710 96)">
+  <g transform="translate(740 96)">
     <g transform="translate(4 2) scale(1.15)">
       <circle cx="8" cy="8" r="5" fill="#A371F7"/>
       <circle cx="28" cy="8" r="5" fill="#58A6FF"/>
@@ -61,7 +61,7 @@
     </g>
     <text x="22" y="58" text-anchor="middle" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">advanced ai/ml</text>
   </g>
-  <g transform="translate(890 96)">
+  <g transform="translate(1022 96)">
     <g transform="translate(2 -4) scale(0.18) translate(-16 -43)">
       <ellipse cx="120" cy="160" rx="104" ry="28" fill="#141414"/>
       <path fill="#141414" d="M52 154 C52 154 54 90 78 68 C94 50 108 44 120 43 C132 44 146 50 162 68 C186 90 188 154 188 154 Z"/>
