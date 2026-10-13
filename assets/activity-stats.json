@@ -15,7 +15,9 @@
       "consistency": [
         71,
         90
-      ]
+      ],
+      "prs": 100,
+      "repos": 63
     },
     {
       "days": 60,
@@ -25,7 +27,9 @@
       "consistency": [
         57,
         60
-      ]
+      ],
+      "prs": 98,
+      "repos": 60
     },
     {
       "days": 30,
@@ -35,7 +39,9 @@
       "consistency": [
         30,
         30
-      ]
+      ],
+      "prs": 73,
+      "repos": 43
     },
     {
       "days": 7,
@@ -45,7 +51,9 @@
       "consistency": [
         7,
         7
-      ]
+      ],
+      "prs": 13,
+      "repos": 20
     }
   ],
   "graph_days": 90,

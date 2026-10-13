@@ -181,20 +181,13 @@ def _graph_body(
     oy: int = 0,
     cell: int = 11,
     gap: int = 3,
-    cell_h: int | None = None,
 ) -> tuple[list[str], int, int]:
-    """Return (svg elements, width, height) for the contribution calendar.
-
-    cell is the horizontal size so the row still fills leftover width.
-    cell_h is shorter so the panel does not grow with square cells.
-    """
-    cell_w = cell
-    cell_h = cell if cell_h is None else cell_h
+    """Return (svg elements, width, height) for the contribution calendar."""
     left = 14
     title_y = 12
     top = 26
-    width = left + len(weeks) * (cell_w + gap) + 6
-    height = top + 7 * (cell_h + gap) + 2
+    width = left + len(weeks) * (cell + gap) + 6
+    height = top + 7 * (cell + gap) + 2
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -212,13 +205,13 @@ def _graph_body(
         f'<text x="{ox + 8}" y="{oy + title_y}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="10" font-weight="700">Contributions - Past 90 Days</text>',
     ]
     for i, label in month_labels:
-        x = ox + left + i * (cell_w + gap)
+        x = ox + left + i * (cell + gap)
         parts.append(
             f'<text x="{x}" y="{oy + top - 4}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
         )
 
     for weekday, label in {1: "M", 3: "W", 5: "F"}.items():
-        y = oy + top + weekday * (cell_h + gap) + cell_h - 1
+        y = oy + top + weekday * (cell + gap) + cell - 1
         parts.append(
             f'<text x="{ox + 4}" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
         )
@@ -230,15 +223,34 @@ def _graph_body(
             weekday = day.get("weekday")
             if weekday is None:
                 weekday = (dt.date.fromisoformat(day["date"]).weekday() + 1) % 7
-            x = ox + left + wi * (cell_w + gap)
-            y = oy + top + weekday * (cell_h + gap)
+            x = ox + left + wi * (cell + gap)
+            y = oy + top + weekday * (cell + gap)
             count = day["contributionCount"]
             fill = GRAPH_LEVELS[level_for_count(count, max_count)]
             parts.append(
-                f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="1" fill="{fill}">'
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" fill="{fill}">'
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
     return parts, width, height
+
+
+def _stats_columns(row: dict) -> list[tuple[str, str, str, bool]]:
+    """(label, color, value, bold) — extra prs/repos columns fill leftover width."""
+    active, window = row["consistency"]
+    cols = [
+        ("window", GRAPH_TEXT, f'last {row["days"]}d', False),
+        ("activity", "#3fb950", nicer(row["activity"]), True),
+        ("commits", "#58a6ff", nicer(row["commits"]), True),
+    ]
+    if "prs" in row:
+        cols.append(("prs", "#f778ba", nicer(row["prs"]), True))
+    if "repos" in row:
+        cols.append(("repos", "#79c0ff", nicer(row["repos"]), True))
+    cols += [
+        ("edits", "#d29922", nicer(row["edits"]), True),
+        ("days", "#a371f7", f"{active}/{window}", True),
+    ]
+    return cols
 
 
 def _stats_body(
@@ -251,7 +263,7 @@ def _stats_body(
     width: int,
     height: int,
 ) -> list[str]:
-    """Activity table drawn into a panel — last column right-anchored so it never clips."""
+    """Activity table — columns spread across leftover panel width."""
     row_h = max(16, (height - 50) // max(len(rows), 1))
     y_title = oy + 12
     y_life = oy + 26
@@ -260,8 +272,10 @@ def _stats_body(
     inset = 12
     right = ox + width - inset
     x0 = ox + inset
-    # Packed columns — edits and days sit next to each other, not stretched to the edge.
-    xs = [x0, x0 + 64, x0 + 122, x0 + 180, x0 + 228]
+    spec = _stats_columns(rows[0]) if rows else []
+    n = max(len(spec), 1)
+    slot = (width - 2 * inset) / n
+    xs = [x0 + int(slot * i) for i in range(n)]
     parts = [
         f'<text x="{x0}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
         f'<text x="{right}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d")}</text>',
@@ -272,25 +286,16 @@ def _stats_body(
             f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
             f"</text>"
         )
-    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
+    for x, (label, *_) in zip(xs, spec):
         parts.append(
             f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">{label}</text>'
         )
     y = y0
     for row in rows:
-        active, window = row["consistency"]
-        vals = (
-            (xs[0], "start", GRAPH_TEXT, f'last {row["days"]}d', False),
-            (xs[1], "start", "#3fb950", nicer(row["activity"]), True),
-            (xs[2], "start", "#58a6ff", nicer(row["commits"]), True),
-            (xs[3], "start", "#d29922", nicer(row["edits"]), True),
-            (xs[4], "start", "#a371f7", f"{active}/{window}", True),
-        )
-        for x, anchor, color, text, bold in vals:
+        for x, (_label, color, text, bold) in zip(xs, _stats_columns(row)):
             weight = ' font-weight="700"' if bold else ""
-            anchor_attr = f' text-anchor="{anchor}"' if anchor != "start" else ""
             parts.append(
-                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="12"{weight}{anchor_attr}>{text}</text>'
+                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="12"{weight}>{text}</text>'
             )
         y += row_h
     return parts
@@ -302,19 +307,11 @@ def render_activity_panel(
     as_of: dt.datetime,
     lifetime: dict | None = None,
 ) -> str:
-    """Single full-width SVG: contributions fill leftover width | packed activity."""
+    """Square contribution cells at compact height; leftover width goes to Activity."""
     weeks, max_count = _calendar_weeks(days, as_of)
     pad = 10
     gap = 10
-    inner = PANEL_WIDTH - 2 * pad
-    stats_w = 300
-    graph_area = inner - gap - stats_w
-    nweeks = max(len(weeks), 1)
-    g_gap = 2
-    cell_w = max(10, (graph_area - 20) // nweeks - g_gap)
-    g_parts, g_w, g_h = _graph_body(
-        weeks, max_count, ox=pad, oy=pad, cell=cell_w, gap=g_gap, cell_h=11
-    )
+    g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=11, gap=2)
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
     stats_w = PANEL_WIDTH - stats_x - pad
@@ -399,6 +396,10 @@ def contribution_stats(now: dt.datetime, days: int) -> dict:
         "days": days,
         "activity": activity,
         "commits": collection["totalCommitContributions"],
+        "prs": collection["totalPullRequestContributions"],
+        "issues": collection["totalIssueContributions"],
+        "reviews": collection["totalPullRequestReviewContributions"],
+        "repo_count": len(repos),
         "repos": repos,
     }
 
@@ -540,7 +541,10 @@ def render_stats_svg(
     y_life = 28
     y_cols = 44
     y0 = 60
-    xs = [10, 82, 148, 214, 272]
+    spec = _stats_columns(rows[0]) if rows else []
+    n = max(len(spec), 1)
+    slot = (width - 20) / n
+    xs = [10 + int(slot * i) for i in range(n)]
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Activity stats">',
         "<title>Activity, commits, line edits, and consistency</title>",
@@ -554,22 +558,14 @@ def render_stats_svg(
             f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
             f"</text>"
         )
-    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
+    for x, (label, *_) in zip(xs, spec):
         lines.append(
             f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">{label}</text>'
         )
     y = y0
     for row in rows:
-        active, window = row["consistency"]
-        vals = (
-            (xs[0], GRAPH_TEXT, f'last {row["days"]}d'),
-            (xs[1], "#3fb950", nicer(row["activity"])),
-            (xs[2], "#58a6ff", nicer(row["commits"])),
-            (xs[3], "#d29922", nicer(row["edits"])),
-            (xs[4], "#a371f7", f"{active}/{window}"),
-        )
-        for x, color, text in vals:
-            weight = "" if x == xs[0] else ' font-weight="700"'
+        for x, (_label, color, text, bold) in zip(xs, _stats_columns(row)):
+            weight = ' font-weight="700"' if bold else ""
             lines.append(
                 f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="10"{weight}>{text}</text>'
             )
@@ -752,6 +748,8 @@ def main() -> int:
             "activity": by_window[days]["activity"],
             "commits": by_window[days]["commits"],
             "edits": edits[days],
+            "prs": by_window[days]["prs"],
+            "repos": by_window[days]["repo_count"],
             "consistency": list(consistency[days]),
         }
         for days in WINDOWS
