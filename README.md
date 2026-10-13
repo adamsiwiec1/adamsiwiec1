@@ -19,17 +19,15 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 
 <!-- activity:start -->
 
-<table width="100%">
+<table>
 <tr>
-<td width="42%" valign="middle" align="center">
+<td valign="middle">
 <a href="https://github.com/adamsiwiec1">
-<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">
+<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" height="140">
 </a>
 </td>
-<td width="58%" valign="middle" align="center">
-<sub>lifetime · activity <code>10.3k</code> · commits <code>9.3k</code> · line edits <code>34.8M</code></sub>
-<br>
-<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">
+<td valign="middle">
+<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" height="140">
 </td>
 </tr>
 </table>

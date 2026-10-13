@@ -166,13 +166,13 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
         weeks.append(week)
 
     max_count = max((d["contributionCount"] for d in days), default=0)
-    # Wide, short calendar — fills a left column beside the stats table.
-    cell = 11
+    # Sized to share height with the activity panel (~40/60 split).
+    cell = 12
     gap = 3
-    left = 18
-    top = 22
-    width = left + len(weeks) * (cell + gap) + 8
-    height = top + 7 * (cell + gap) + 14
+    left = 16
+    top = 20
+    width = left + len(weeks) * (cell + gap) + 6
+    height = top + 7 * (cell + gap) + 12
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -411,34 +411,53 @@ def line_edits(now: dt.datetime, repos: list[dict], since: dt.datetime, max_page
     return totals, all_edits
 
 
-def render_stats_svg(rows: list[dict], as_of: dt.datetime) -> str:
-    # Wide + short + small type — sits beside the contribution graph.
-    width = 980
-    row_h = 18
-    header_h = 30
-    height = header_h + 8 + row_h * len(rows) + 8
+def render_stats_svg(
+    rows: list[dict],
+    as_of: dt.datetime,
+    lifetime: dict | None = None,
+    height: int = 137,
+    width: int = 360,
+) -> str:
+    """Activity panel sized to match contribution-graph height."""
+    row_h = 20
+    y_title = 14
+    y_life = 28
+    y_cols = 44
+    y0 = 60
+    # Five columns spread across the panel.
+    xs = [10, int(width * 0.22), int(width * 0.40), int(width * 0.58), int(width * 0.78)]
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Activity stats">',
         "<title>Activity, commits, line edits, and consistency</title>",
-        f'<rect width="{width}" height="{height}" rx="6" fill="#0d1117" stroke="#30363d"/>',
-        f'<text x="14" y="16" fill="#e6edf3" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
-        f'<text x="{width - 14}" y="16" text-anchor="end" fill="#8b949e" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d UTC")}</text>',
-        f'<text x="16" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">window</text>',
-        f'<text x="160" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">activity</text>',
-        f'<text x="340" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">commits</text>',
-        f'<text x="520" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">line edits</text>',
-        f'<text x="820" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">consistency</text>',
+        f'<rect width="{width}" height="{height}" rx="6" fill="#0d1117" stroke="{GRAPH_BORDER}"/>',
+        f'<text x="10" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="10" font-weight="700">Activity</text>',
+        f'<text x="{width - 10}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">as of {as_of.strftime("%Y-%m-%d")}</text>',
     ]
-    y = 46
+    if lifetime:
+        lines.append(
+            f'<text x="10" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">'
+            f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
+            f"</text>"
+        )
+    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
+        lines.append(
+            f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">{label}</text>'
+        )
+    y = y0
     for row in rows:
         active, window = row["consistency"]
-        lines += [
-            f'<text x="16" y="{y}" fill="#e6edf3" font-family="{MONO}" font-size="11">last {row["days"]}d</text>',
-            f'<text x="160" y="{y}" fill="#3fb950" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["activity"])}</text>',
-            f'<text x="340" y="{y}" fill="#58a6ff" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["commits"])}</text>',
-            f'<text x="520" y="{y}" fill="#d29922" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["edits"])}</text>',
-            f'<text x="820" y="{y}" fill="#a371f7" font-family="{MONO}" font-size="11" font-weight="700">{active}/{window}</text>',
-        ]
+        vals = (
+            (xs[0], GRAPH_TEXT, f'last {row["days"]}d'),
+            (xs[1], "#3fb950", nicer(row["activity"])),
+            (xs[2], "#58a6ff", nicer(row["commits"])),
+            (xs[3], "#d29922", nicer(row["edits"])),
+            (xs[4], "#a371f7", f"{active}/{window}"),
+        )
+        for x, color, text in vals:
+            weight = "" if x == xs[0] else ' font-weight="700"'
+            lines.append(
+                f'<text x="{x}" y="{y}" fill="{color}" font-family="{MONO}" font-size="10"{weight}>{text}</text>'
+            )
         y += row_h
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
@@ -458,30 +477,21 @@ def repos_row_html(repos: list[dict]) -> str:
     return "<table>\n<tr>\n" + "\n".join(cells) + "\n</tr>\n</table>"
 
 
-def lifetime_html(lifetime: dict) -> str:
-    return (
-        f'<sub>lifetime · activity <code>{nicer(lifetime["activity"])}</code>'
-        f' · commits <code>{nicer(lifetime["commits"])}</code>'
-        f' · line edits <code>{nicer(lifetime["edits"])}</code></sub>'
-    )
-
-
 def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> str:
+    # Fixed matching heights so GitHub scales both panels equally side-by-side.
     return "\n".join(
         [
             START_MARK,
             "",
-            "<table width=\"100%\">",
+            "<table>",
             "<tr>",
-            '<td width="42%" valign="middle" align="center">',
+            '<td valign="middle">',
             '<a href="https://github.com/adamsiwiec1">',
-            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">',
+            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" height="140">',
             "</a>",
             "</td>",
-            '<td width="58%" valign="middle" align="center">',
-            lifetime_html(lifetime),
-            "<br>",
-            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">',
+            '<td valign="middle">',
+            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" height="140">',
             "</td>",
             "</tr>",
             "</table>",
@@ -546,8 +556,20 @@ def main() -> int:
     repos = by_window[90]["repos"]
 
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
-    OUT_GRAPH.write_text(render_contribution_graph(calendar_days, now))
-    OUT_STATS.write_text(render_stats_svg(rows, now))
+    graph_svg = render_contribution_graph(calendar_days, now)
+    OUT_GRAPH.write_text(graph_svg)
+    # Match activity panel height to the graph; ~1.55× wider for a balanced pair.
+    graph_h = int(re.search(r'height="(\d+)"', graph_svg).group(1))
+    graph_w = int(re.search(r'width="(\d+)"', graph_svg).group(1))
+    OUT_STATS.write_text(
+        render_stats_svg(
+            rows,
+            now,
+            lifetime=lifetime,
+            height=graph_h,
+            width=max(360, int(graph_w * 1.55)),
+        )
+    )
     OUT_JSON.write_text(
         json.dumps(
             {
