@@ -17,6 +17,7 @@ OUT_STATS = ROOT / "assets" / "activity-stats.svg"
 OUT_GRAPH = ROOT / "assets" / "contribution-graph-90d.svg"
 OUT_PANEL = ROOT / "assets" / "activity-panel.svg"
 OUT_JSON = ROOT / "assets" / "activity-stats.json"
+OUT_LIFETIME = ROOT / "assets" / "all-time.svg"
 # Full README content width — one SVG so GitHub can't leave a dead column.
 PANEL_WIDTH = 888
 LOGIN = "adamsiwiec1"
@@ -528,6 +529,37 @@ def line_edits(now: dt.datetime, repos: list[dict], since: dt.datetime, max_page
     return totals, all_edits
 
 
+def render_lifetime_svg(lifetime: dict) -> str:
+    """Compact all-time card that sits beside the company lockups."""
+    created = lifetime.get("created_at") or "2020-10-19T00:00:00Z"
+    when = dt.datetime.fromisoformat(created.replace("Z", "+00:00"))
+    since = when.strftime("%b %Y")
+    stats = (
+        (f"{lifetime['activity']:,}", "contributions", "#3fb950"),
+        (f"{lifetime['commits']:,}", "commits", "#58a6ff"),
+        (nicer(lifetime["edits"]), "line edits", "#d29922"),
+    )
+    width, height = 468, 76
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="All-time GitHub stats since {since}. {stats[0][0]} contributions, {stats[1][0]} commits, {stats[2][0]} line edits.">',
+        "<title>All-time GitHub stats</title>",
+        f'<rect width="{width}" height="{height}" rx="8" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
+        f'<text x="16" y="20" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="12" font-weight="700">All time</text>',
+        f'<text x="{width - 16}" y="20" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="11">since {since}</text>',
+    ]
+    slot = (width - 32) / 3
+    for i, (value, label, color) in enumerate(stats):
+        x = 16 + slot * i + slot / 2
+        parts.append(
+            f'<text x="{x:.1f}" y="48" text-anchor="middle" fill="{color}" font-family="{MONO}" font-size="20" font-weight="700">{value}</text>'
+        )
+        parts.append(
+            f'<text x="{x:.1f}" y="64" text-anchor="middle" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="11">{label}</text>'
+        )
+    parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
 def render_stats_svg(
     rows: list[dict],
     as_of: dt.datetime,
@@ -749,6 +781,7 @@ def main() -> int:
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
     panel_svg = render_activity_panel(calendar_days, rows, now, lifetime=lifetime)
     OUT_PANEL.write_text(panel_svg)
+    OUT_LIFETIME.write_text(render_lifetime_svg(lifetime))
     OUT_REPOS.write_text(render_repos_strip_svg(repos))
     # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)

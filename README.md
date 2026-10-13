@@ -2,6 +2,8 @@
   <img src="assets/banner.svg" alt="adam siwiec. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
+I run two companies. **Devrecated Solutions** puts process, gates, and evidence around AI coding agents. **OpenHat Security** does authorized offensive security against an AI-scale attack surface, then leaves the findings, the logs, and the fix.
+
 <table>
 <tr>
 <td valign="middle" width="210">
@@ -11,11 +13,7 @@
 <a href="https://openhat.devrecated.com"><img src="assets/openhat-lockup.svg" alt="OpenHat Security" width="200"></a>
 </td>
 <td valign="middle">
-
-I run two companies. **Devrecated Solutions** puts process, gates, and evidence around AI coding agents. **OpenHat Security** does authorized offensive security against an AI-scale attack surface, then leaves the findings, the logs, and the fix.
-
-**All time** · 10,352 contributions · 9,305 commits · 34.8M line edits · since Oct 2020
-
+<a href="https://github.com/adamsiwiec1"><img src="assets/all-time.svg" alt="All-time GitHub stats. 10,352 contributions, 9,305 commits, 34.8 million line edits since October 2020." width="100%"></a>
 </td>
 </tr>
 </table>
