@@ -15,35 +15,48 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 </tr>
 </table>
 
+## Activity
+
+<p align="center">
+  <a href="https://github.com/adamsiwiec1">
+    <img src="https://ghchart.rshah.org/40c463/adamsiwiec1" alt="GitHub contribution graph" width="100%">
+  </a>
+</p>
+
 ## Top repositories
 
 Public repos across [adamsiwiec1](https://github.com/adamsiwiec1), [devrecated](https://github.com/devrecated), and [openhat-security](https://github.com/openhat-security), ranked by stars.
 
 <table>
 <tr>
+<td valign="middle" align="right" width="28"><strong>1</strong></td>
 <td valign="middle" width="28"><img src="assets/icons/mcp.svg" width="22" height="22" alt=""></td>
 <td valign="middle"><a href="https://github.com/adamsiwiec1/mcp-sse-authenticated-cloud-run"><strong>mcp-sse-authenticated-cloud-run</strong></a> · TypeScript · MCP over SSE on Cloud Run, IAM auth</td>
-<td valign="middle" align="right" width="72">23 stars</td>
+<td valign="middle" align="right" width="88"><img src="assets/icons/star.svg" width="14" height="14" alt="" align="absmiddle"> 23</td>
 </tr>
 <tr>
+<td valign="middle" align="right"><strong>2</strong></td>
 <td valign="middle"><img src="assets/icons/secrets.svg" width="22" height="22" alt=""></td>
 <td valign="middle"><a href="https://github.com/adamsiwiec1/monorepo-secret-manager"><strong>monorepo-secret-manager</strong></a> · TypeScript · Sync secrets across a monorepo</td>
-<td valign="middle" align="right">5 stars</td>
+<td valign="middle" align="right"><img src="assets/icons/star.svg" width="14" height="14" alt="" align="absmiddle"> 5</td>
 </tr>
 <tr>
+<td valign="middle" align="right"><strong>3</strong></td>
 <td valign="middle"><img src="assets/icons/docs.svg" width="22" height="22" alt=""></td>
 <td valign="middle"><a href="https://github.com/adamsiwiec1/stockPredictionsML"><strong>stockPredictionsML</strong></a> · Python · Stock prediction model on yfinance</td>
-<td valign="middle" align="right">5 stars</td>
+<td valign="middle" align="right"><img src="assets/icons/star.svg" width="14" height="14" alt="" align="absmiddle"> 5</td>
 </tr>
 <tr>
+<td valign="middle" align="right"><strong>4</strong></td>
 <td valign="middle"><img src="assets/icons/s3.svg" width="22" height="22" alt=""></td>
 <td valign="middle"><a href="https://github.com/adamsiwiec1/SQLStockScraper"><strong>SQLStockScraper</strong></a> · Python · yfinance indicators into SQL</td>
-<td valign="middle" align="right">3 stars</td>
+<td valign="middle" align="right"><img src="assets/icons/star.svg" width="14" height="14" alt="" align="absmiddle"> 3</td>
 </tr>
 <tr>
+<td valign="middle" align="right"><strong>5</strong></td>
 <td valign="middle"><img src="assets/icons/cli.svg" width="22" height="22" alt=""></td>
 <td valign="middle"><a href="https://github.com/adamsiwiec1/powershell-scripts"><strong>powershell-scripts</strong></a> · PowerShell · Collection of PowerShell scripts</td>
-<td valign="middle" align="right">3 stars</td>
+<td valign="middle" align="right"><img src="assets/icons/star.svg" width="14" height="14" alt="" align="absmiddle"> 3</td>
 </tr>
 </table>
 
