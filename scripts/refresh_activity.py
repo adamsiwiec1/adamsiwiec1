@@ -166,13 +166,13 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
         weeks.append(week)
 
     max_count = max((d["contributionCount"] for d in days), default=0)
-    # Sized to share height with the activity panel (~40/60 split).
-    cell = 12
-    gap = 3
-    left = 16
-    top = 20
-    width = left + len(weeks) * (cell + gap) + 6
-    height = top + 7 * (cell + gap) + 12
+    # Larger cells — sits beside activity in a full-width 46/54 split.
+    cell = 16
+    gap = 4
+    left = 18
+    top = 22
+    width = left + len(weeks) * (cell + gap) + 8
+    height = top + 7 * (cell + gap) + 14
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -478,20 +478,20 @@ def repos_row_html(repos: list[dict]) -> str:
 
 
 def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> str:
-    # Fixed matching heights so GitHub scales both panels equally side-by-side.
+    # Full-width pair; SVG aspect ratios are tuned so both columns share height.
     return "\n".join(
         [
             START_MARK,
             "",
-            "<table>",
+            '<table width="100%">',
             "<tr>",
-            '<td valign="middle">',
+            '<td width="46%" valign="middle">',
             '<a href="https://github.com/adamsiwiec1">',
-            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" height="140">',
+            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">',
             "</a>",
             "</td>",
-            '<td valign="middle">',
-            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" height="140">',
+            '<td width="54%" valign="middle">',
+            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">',
             "</td>",
             "</tr>",
             "</table>",
@@ -558,7 +558,7 @@ def main() -> int:
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
-    # Match activity panel height to the graph; ~1.55× wider for a balanced pair.
+    # Same height as the graph; width ratio ≈ 54/46 so full-width columns align.
     graph_h = int(re.search(r'height="(\d+)"', graph_svg).group(1))
     graph_w = int(re.search(r'width="(\d+)"', graph_svg).group(1))
     OUT_STATS.write_text(
@@ -567,7 +567,7 @@ def main() -> int:
             now,
             lifetime=lifetime,
             height=graph_h,
-            width=max(360, int(graph_w * 1.55)),
+            width=int(graph_w * 54 / 46),
         )
     )
     OUT_JSON.write_text(
