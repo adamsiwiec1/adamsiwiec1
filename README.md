@@ -17,13 +17,13 @@ I run two companies. **Devrecated Solutions** puts process, gates, and evidence 
 
 ## Activity
 
+<!-- activity:start -->
+
 <p align="center">
   <a href="https://github.com/adamsiwiec1">
-    <img src="https://ghchart.rshah.org/40c463/adamsiwiec1" alt="GitHub contribution graph" width="100%">
+    <img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">
   </a>
 </p>
-
-<!-- activity:start -->
 
 <p align="center"><img src="assets/activity-stats.svg" alt="Activity, commits, and line edits for the last 90, 60, 30, and 7 days" width="100%"></p>
 
@@ -35,7 +35,7 @@ Repos contributed to in the last 90 days (63):
 <td valign="middle" nowrap><a href="https://github.com/devrecated/autodevelop">autodevelop</a>&nbsp;<code>147</code></td>
 <td valign="middle" nowrap><a href="https://github.com/the-freetech-company/otw-portal-react">otw-portal-react</a>&nbsp;<code>125</code></td>
 <td valign="middle" nowrap><a href="https://github.com/openhat-security/ohqs">ohqs</a>&nbsp;<code>37</code></td>
-<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/adamsiwiec1">adamsiwiec1</a>&nbsp;<code>35</code></td>
+<td valign="middle" nowrap><a href="https://github.com/adamsiwiec1/adamsiwiec1">adamsiwiec1</a>&nbsp;<code>36</code></td>
 <td valign="middle" nowrap><a href="https://github.com/openhat-security/oniongate">oniongate</a>&nbsp;<code>34</code></td>
 <td valign="middle" nowrap><a href="https://github.com/devrecated/healthcare-marketing-demo">healthcare-marketing-demo</a>&nbsp;<code>32</code></td>
 <td valign="middle" nowrap><a href="https://github.com/openhat-security/truffles">truffles</a>&nbsp;<code>32</code></td>

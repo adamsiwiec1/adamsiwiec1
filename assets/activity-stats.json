@@ -1,31 +1,33 @@
 {
-  "as_of": "2026-10-13T00:55:11Z",
+  "as_of": "2026-10-13T01:12:30Z",
   "windows": [
     {
       "days": 90,
-      "activity": 1197,
-      "commits": 910,
-      "edits": 9574074
+      "activity": 1198,
+      "commits": 911,
+      "edits": 9574854
     },
     {
       "days": 60,
-      "activity": 1148,
-      "commits": 865,
-      "edits": 8887726
+      "activity": 1149,
+      "commits": 866,
+      "edits": 8888506
     },
     {
       "days": 30,
-      "activity": 801,
-      "commits": 635,
-      "edits": 2834731
+      "activity": 802,
+      "commits": 636,
+      "edits": 2410233
     },
     {
       "days": 7,
-      "activity": 189,
-      "commits": 153,
-      "edits": 170687
+      "activity": 190,
+      "commits": 154,
+      "edits": 171467
     }
   ],
+  "graph_days": 90,
+  "graph_total": 1218,
   "repos_90d": [
     {
       "name": "openhat-security/runhug",
@@ -49,7 +51,7 @@
     },
     {
       "name": "adamsiwiec1/adamsiwiec1",
-      "commits": 35,
+      "commits": 36,
       "private": false
     },
     {
