@@ -664,8 +664,6 @@ def render_contributed_block(repos: list[dict]) -> str:
             "",
             f"### Repos contributed to in the last 90 days ({len(repos)})",
             "",
-            "The chip row fades at the edge. Full list is below.",
-            "",
             '<p align="center">',
             '<img src="assets/repos-90d.svg" alt="Repos contributed to in the last 90 days" width="100%">',
             "</p>",

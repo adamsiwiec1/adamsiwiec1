@@ -68,8 +68,6 @@ Public repos across [adamsiwiec1](https://github.com/adamsiwiec1), [devrecated](
 
 ### Repos contributed to in the last 90 days (63)
 
-The chip row fades at the edge. Full list is below.
-
 <p align="center">
 <img src="assets/repos-90d.svg" alt="Repos contributed to in the last 90 days" width="100%">
 </p>
