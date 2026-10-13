@@ -166,12 +166,13 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
         weeks.append(week)
 
     max_count = max((d["contributionCount"] for d in days), default=0)
-    cell = 7
-    gap = 2
-    left = 22
-    top = 28
-    width = left + len(weeks) * (cell + gap) + 10
-    height = top + 7 * (cell + gap) + 16
+    # Wide, short calendar — fills a left column beside the stats table.
+    cell = 11
+    gap = 3
+    left = 18
+    top = 22
+    width = left + len(weeks) * (cell + gap) + 8
+    height = top + 7 * (cell + gap) + 14
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -188,21 +189,21 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Contribution graph, last 90 days">',
         "<title>Contribution graph (last 90 days)</title>",
-        f'<rect width="{width}" height="{height}" rx="8" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
-        f'<text x="10" y="14" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="9" font-weight="700">Contributions</text>',
-        f'<text x="{width - 10}" y="14" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">90d</text>',
+        f'<rect width="{width}" height="{height}" rx="6" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
+        f'<text x="8" y="12" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="9" font-weight="700">Contributions</text>',
+        f'<text x="{width - 8}" y="12" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">90d</text>',
     ]
     for i, label in month_labels:
         x = left + i * (cell + gap)
         parts.append(
-            f'<text x="{x}" y="{top - 4}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
+            f'<text x="{x}" y="{top - 3}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
         )
 
     day_labels = {1: "M", 3: "W", 5: "F"}
     for weekday, label in day_labels.items():
         y = top + weekday * (cell + gap) + cell - 1
         parts.append(
-            f'<text x="6" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
+            f'<text x="4" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
         )
 
     for wi, week in enumerate(weeks):
@@ -221,10 +222,10 @@ def render_contribution_graph(days: list[dict], as_of: dt.datetime) -> str:
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
 
-    lx = width - 10 - 5 * (cell + gap) - 28
+    lx = width - 8 - 5 * (cell + gap) - 32
     ly = height - 12
     parts.append(
-        f'<text x="{lx - 18}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">Less</text>'
+        f'<text x="{lx - 20}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">Less</text>'
     )
     for i, color in enumerate(GRAPH_LEVELS):
         parts.append(
@@ -411,31 +412,32 @@ def line_edits(now: dt.datetime, repos: list[dict], since: dt.datetime, max_page
 
 
 def render_stats_svg(rows: list[dict], as_of: dt.datetime) -> str:
-    width = 900
-    row_h = 32
-    header_h = 52
-    height = header_h + 18 + row_h * len(rows) + 16
+    # Wide + short + small type — sits beside the contribution graph.
+    width = 980
+    row_h = 18
+    header_h = 30
+    height = header_h + 8 + row_h * len(rows) + 8
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Activity stats">',
         "<title>Activity, commits, line edits, and consistency</title>",
-        f'<rect width="{width}" height="{height}" rx="12" fill="#0d1117" stroke="#30363d"/>',
-        f'<text x="24" y="28" fill="#e6edf3" font-family="{FONT}" font-size="15" font-weight="700">Activity</text>',
-        f'<text x="{width - 24}" y="28" text-anchor="end" fill="#8b949e" font-family="{MONO}" font-size="11">as of {as_of.strftime("%Y-%m-%d UTC")}</text>',
-        f'<text x="24" y="52" fill="#8b949e" font-family="{MONO}" font-size="11">window</text>',
-        f'<text x="160" y="52" fill="#8b949e" font-family="{MONO}" font-size="11">activity</text>',
-        f'<text x="320" y="52" fill="#8b949e" font-family="{MONO}" font-size="11">commits</text>',
-        f'<text x="480" y="52" fill="#8b949e" font-family="{MONO}" font-size="11">line edits</text>',
-        f'<text x="680" y="52" fill="#8b949e" font-family="{MONO}" font-size="11">consistency</text>',
+        f'<rect width="{width}" height="{height}" rx="6" fill="#0d1117" stroke="#30363d"/>',
+        f'<text x="14" y="16" fill="#e6edf3" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
+        f'<text x="{width - 14}" y="16" text-anchor="end" fill="#8b949e" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d UTC")}</text>',
+        f'<text x="16" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">window</text>',
+        f'<text x="160" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">activity</text>',
+        f'<text x="340" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">commits</text>',
+        f'<text x="520" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">line edits</text>',
+        f'<text x="820" y="34" fill="#8b949e" font-family="{MONO}" font-size="9">consistency</text>',
     ]
-    y = 78
+    y = 46
     for row in rows:
         active, window = row["consistency"]
         lines += [
-            f'<text x="24" y="{y}" fill="#e6edf3" font-family="{MONO}" font-size="13">last {row["days"]}d</text>',
-            f'<text x="160" y="{y}" fill="#3fb950" font-family="{MONO}" font-size="13" font-weight="700">{nicer(row["activity"])}</text>',
-            f'<text x="320" y="{y}" fill="#58a6ff" font-family="{MONO}" font-size="13" font-weight="700">{nicer(row["commits"])}</text>',
-            f'<text x="480" y="{y}" fill="#d29922" font-family="{MONO}" font-size="13" font-weight="700">{nicer(row["edits"])}</text>',
-            f'<text x="680" y="{y}" fill="#a371f7" font-family="{MONO}" font-size="13" font-weight="700">{active}/{window}</text>',
+            f'<text x="16" y="{y}" fill="#e6edf3" font-family="{MONO}" font-size="11">last {row["days"]}d</text>',
+            f'<text x="160" y="{y}" fill="#3fb950" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["activity"])}</text>',
+            f'<text x="340" y="{y}" fill="#58a6ff" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["commits"])}</text>',
+            f'<text x="520" y="{y}" fill="#d29922" font-family="{MONO}" font-size="11" font-weight="700">{nicer(row["edits"])}</text>',
+            f'<text x="820" y="{y}" fill="#a371f7" font-family="{MONO}" font-size="11" font-weight="700">{active}/{window}</text>',
         ]
         y += row_h
     lines.append("</svg>")
@@ -458,11 +460,9 @@ def repos_row_html(repos: list[dict]) -> str:
 
 def lifetime_html(lifetime: dict) -> str:
     return (
-        '<p align="center">'
         f'<sub>lifetime · activity <code>{nicer(lifetime["activity"])}</code>'
         f' · commits <code>{nicer(lifetime["commits"])}</code>'
         f' · line edits <code>{nicer(lifetime["edits"])}</code></sub>'
-        "</p>"
     )
 
 
@@ -471,15 +471,20 @@ def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> 
         [
             START_MARK,
             "",
-            '<p align="center">',
-            '  <a href="https://github.com/adamsiwiec1">',
-            '    <img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="320">',
-            "  </a>",
-            "</p>",
-            "",
+            "<table width=\"100%\">",
+            "<tr>",
+            '<td width="42%" valign="middle" align="center">',
+            '<a href="https://github.com/adamsiwiec1">',
+            '<img src="assets/contribution-graph-90d.svg" alt="GitHub contribution graph, last 90 days" width="100%">',
+            "</a>",
+            "</td>",
+            '<td width="58%" valign="middle" align="center">',
             lifetime_html(lifetime),
-            "",
-            '<p align="center"><img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%"></p>',
+            "<br>",
+            '<img src="assets/activity-stats.svg" alt="Activity, commits, line edits, and consistency for the last 90, 60, 30, and 7 days" width="100%">',
+            "</td>",
+            "</tr>",
+            "</table>",
             "",
             f"Repos contributed to in the last 90 days ({len(repos)}):",
             "",

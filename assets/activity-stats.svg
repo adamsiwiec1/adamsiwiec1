@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="214" viewBox="0 0 900 214" role="img" aria-label="Activity stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="118" viewBox="0 0 980 118" role="img" aria-label="Activity stats">
 <title>Activity, commits, line edits, and consistency</title>
-<rect width="900" height="214" rx="12" fill="#0d1117" stroke="#30363d"/>
-<text x="24" y="28" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700">Activity</text>
-<text x="876" y="28" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">as of 2026-10-13 UTC</text>
-<text x="24" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">window</text>
-<text x="160" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">activity</text>
-<text x="320" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">commits</text>
-<text x="480" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">line edits</text>
-<text x="680" y="52" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">consistency</text>
-<text x="24" y="78" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 90d</text>
-<text x="160" y="78" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">1.2k</text>
-<text x="320" y="78" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">912</text>
-<text x="480" y="78" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">9.6M</text>
-<text x="680" y="78" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">71/90</text>
-<text x="24" y="110" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 60d</text>
-<text x="160" y="110" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">1.1k</text>
-<text x="320" y="110" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">867</text>
-<text x="480" y="110" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">8.8M</text>
-<text x="680" y="110" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">57/60</text>
-<text x="24" y="142" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 30d</text>
-<text x="160" y="142" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">803</text>
-<text x="320" y="142" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">637</text>
-<text x="480" y="142" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">2.4M</text>
-<text x="680" y="142" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">30/30</text>
-<text x="24" y="174" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">last 7d</text>
-<text x="160" y="174" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">191</text>
-<text x="320" y="174" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">155</text>
-<text x="480" y="174" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">171.8k</text>
-<text x="680" y="174" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="700">7/7</text>
+<rect width="980" height="118" rx="6" fill="#0d1117" stroke="#30363d"/>
+<text x="14" y="16" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" font-weight="700">Activity</text>
+<text x="966" y="16" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">as of 2026-10-13 UTC</text>
+<text x="16" y="34" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">window</text>
+<text x="160" y="34" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">activity</text>
+<text x="340" y="34" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">commits</text>
+<text x="520" y="34" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">line edits</text>
+<text x="820" y="34" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9">consistency</text>
+<text x="16" y="46" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">last 90d</text>
+<text x="160" y="46" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">1.2k</text>
+<text x="340" y="46" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">912</text>
+<text x="520" y="46" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">9.6M</text>
+<text x="820" y="46" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">71/90</text>
+<text x="16" y="64" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">last 60d</text>
+<text x="160" y="64" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">1.1k</text>
+<text x="340" y="64" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">867</text>
+<text x="520" y="64" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">8.8M</text>
+<text x="820" y="64" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">57/60</text>
+<text x="16" y="82" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">last 30d</text>
+<text x="160" y="82" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">803</text>
+<text x="340" y="82" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">637</text>
+<text x="520" y="82" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">2.4M</text>
+<text x="820" y="82" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">30/30</text>
+<text x="16" y="100" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">last 7d</text>
+<text x="160" y="100" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">191</text>
+<text x="340" y="100" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">155</text>
+<text x="520" y="100" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">171.8k</text>
+<text x="820" y="100" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">7/7</text>
 </svg>
