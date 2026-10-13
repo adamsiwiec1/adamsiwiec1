@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="359" height="176" viewBox="0 0 359 176" role="img" aria-label="Activity stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="352" height="180" viewBox="0 0 352 180" role="img" aria-label="Activity stats">
 <title>Activity, commits, line edits, and consistency</title>
-<rect width="359" height="176" rx="6" fill="#0d1117" stroke="#30363d"/>
+<rect width="352" height="180" rx="6" fill="#0d1117" stroke="#30363d"/>
 <text x="10" y="14" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="700">Activity</text>
-<text x="349" y="14" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">as of 2026-10-13</text>
-<text x="10" y="28" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">lifetime · 10.3k act · 9.3k commits · 34.8M edits</text>
+<text x="342" y="14" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">as of 2026-10-13</text>
+<text x="10" y="28" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">lifetime · 10.4k act · 9.3k commits · 34.8M edits</text>
 <text x="10" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">window</text>
-<text x="78" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">activity</text>
-<text x="143" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">commits</text>
-<text x="208" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">edits</text>
-<text x="280" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">days</text>
+<text x="82" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">activity</text>
+<text x="148" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">commits</text>
+<text x="214" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">edits</text>
+<text x="272" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">days</text>
 <text x="10" y="60" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 90d</text>
-<text x="78" y="60" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2k</text>
-<text x="143" y="60" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">912</text>
-<text x="208" y="60" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">9.6M</text>
-<text x="280" y="60" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">71/90</text>
+<text x="82" y="60" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2k</text>
+<text x="148" y="60" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">926</text>
+<text x="214" y="60" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">9.6M</text>
+<text x="272" y="60" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">71/90</text>
 <text x="10" y="80" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 60d</text>
-<text x="78" y="80" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.1k</text>
-<text x="143" y="80" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">867</text>
-<text x="208" y="80" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">8.8M</text>
-<text x="280" y="80" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">57/60</text>
+<text x="82" y="80" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2k</text>
+<text x="148" y="80" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">881</text>
+<text x="214" y="80" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">8.8M</text>
+<text x="272" y="80" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">57/60</text>
 <text x="10" y="100" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 30d</text>
-<text x="78" y="100" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">803</text>
-<text x="143" y="100" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">637</text>
-<text x="208" y="100" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">2.4M</text>
-<text x="280" y="100" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">30/30</text>
+<text x="82" y="100" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">818</text>
+<text x="148" y="100" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">651</text>
+<text x="214" y="100" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">2.4M</text>
+<text x="272" y="100" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">30/30</text>
 <text x="10" y="120" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 7d</text>
-<text x="78" y="120" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">191</text>
-<text x="143" y="120" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">155</text>
-<text x="208" y="120" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">171.8k</text>
-<text x="280" y="120" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">7/7</text>
+<text x="82" y="120" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">206</text>
+<text x="148" y="120" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">169</text>
+<text x="214" y="120" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">186.2k</text>
+<text x="272" y="120" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">7/7</text>
 </svg>

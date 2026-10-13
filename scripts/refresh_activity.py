@@ -24,6 +24,9 @@ USER_ID = "MDQ6VXNlcjczMDg1OTI3"
 WINDOWS = (90, 60, 30, 7)
 START_MARK = "<!-- activity:start -->"
 END_MARK = "<!-- activity:end -->"
+CONTRIB_START = "<!-- contributed:start -->"
+CONTRIB_END = "<!-- contributed:end -->"
+OUT_REPOS = ROOT / "assets" / "repos-90d.svg"
 
 # GitHub dark contribution levels (same ramp as the profile calendar).
 GRAPH_LEVELS = ("#161b22", "#0e4429", "#006d32", "#26a641", "#39d353")
@@ -185,7 +188,7 @@ def _graph_body(
     title_y = 11
     top = 36
     width = left + len(weeks) * (cell + gap) + 6
-    height = top + 7 * (cell + gap) + 12
+    height = top + 7 * (cell + gap) + 4
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -230,19 +233,6 @@ def _graph_body(
                 f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" fill="{fill}">'
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
-
-    lx = ox + width - 8 - 5 * (cell + gap) - 28
-    ly = oy + height - 12
-    parts.append(
-        f'<text x="{lx - 18}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">Less</text>'
-    )
-    for i, color in enumerate(GRAPH_LEVELS):
-        parts.append(
-            f'<rect x="{lx + i * (cell + gap)}" y="{ly}" width="{cell}" height="{cell}" rx="1" fill="{color}"/>'
-        )
-    parts.append(
-        f'<text x="{lx + 5 * (cell + gap) + 2}" y="{ly + cell - 1}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">More</text>'
-    )
     return parts, width, height
 
 
@@ -262,28 +252,25 @@ def _stats_body(
     y_life = oy + 32
     y_cols = oy + 48
     y0 = oy + 66
-    inset = 14
+    inset = 12
     right = ox + width - inset
-    # Five even slots; days is right-anchored in the last slot so "71/90" never clips.
-    slot = (width - 2 * inset) / 5
-    xs = [ox + inset + int(slot * i) for i in range(4)]
+    x0 = ox + inset
+    # Packed columns — edits and days sit next to each other, not stretched to the edge.
+    xs = [x0, x0 + 64, x0 + 122, x0 + 180, x0 + 228]
     parts = [
-        f'<text x="{ox + inset}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
+        f'<text x="{x0}" y="{y_title}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="11" font-weight="700">Activity</text>',
         f'<text x="{right}" y="{y_title}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">as of {as_of.strftime("%Y-%m-%d")}</text>',
     ]
     if lifetime:
         parts.append(
-            f'<text x="{ox + inset}" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">'
+            f'<text x="{x0}" y="{y_life}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">'
             f'lifetime · {nicer(lifetime["activity"])} act · {nicer(lifetime["commits"])} commits · {nicer(lifetime["edits"])} edits'
             f"</text>"
         )
-    for x, label in zip(xs, ("window", "activity", "commits", "edits")):
+    for x, label in zip(xs, ("window", "activity", "commits", "edits", "days")):
         parts.append(
             f'<text x="{x}" y="{y_cols}" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">{label}</text>'
         )
-    parts.append(
-        f'<text x="{right}" y="{y_cols}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="9">days</text>'
-    )
     y = y0
     for row in rows:
         active, window = row["consistency"]
@@ -292,7 +279,7 @@ def _stats_body(
             (xs[1], "start", "#3fb950", nicer(row["activity"]), True),
             (xs[2], "start", "#58a6ff", nicer(row["commits"]), True),
             (xs[3], "start", "#d29922", nicer(row["edits"]), True),
-            (right, "end", "#a371f7", f"{active}/{window}", True),
+            (xs[4], "start", "#a371f7", f"{active}/{window}", True),
         )
         for x, anchor, color, text, bold in vals:
             weight = ' font-weight="700"' if bold else ""
@@ -310,16 +297,16 @@ def render_activity_panel(
     as_of: dt.datetime,
     lifetime: dict | None = None,
 ) -> str:
-    """Single full-width SVG: compact contributions | activity."""
+    """Single full-width SVG: contributions fill leftover width | packed activity."""
     weeks, max_count = _calendar_weeks(days, as_of)
     pad = 10
-    gap = 12
-    # Wider calendar on the left; activity fills the remainder.
+    gap = 10
     inner = PANEL_WIDTH - 2 * pad
-    graph_w_target = int(inner * 0.48)
+    stats_w = 300
+    graph_area = inner - gap - stats_w
     nweeks = max(len(weeks), 1)
-    cell = max(11, min(18, (graph_w_target - 28) // nweeks - 2))
-    g_gap = 3 if cell >= 13 else 2
+    g_gap = 2
+    cell = max(10, (graph_area - 20) // nweeks - g_gap)
     g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
@@ -546,8 +533,7 @@ def render_stats_svg(
     y_life = 28
     y_cols = 44
     y0 = 60
-    # Five columns spread across the panel.
-    xs = [10, int(width * 0.22), int(width * 0.40), int(width * 0.58), int(width * 0.78)]
+    xs = [10, 82, 148, 214, 272]
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Activity stats">',
         "<title>Activity, commits, line edits, and consistency</title>",
@@ -585,22 +571,76 @@ def render_stats_svg(
     return "\n".join(lines) + "\n"
 
 
-def repos_row_html(repos: list[dict]) -> str:
-    """Single table row — one horizontal strip of repo + commit count."""
-    cells = []
+def _xml(text: str) -> str:
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def render_repos_strip_svg(repos: list[dict], width: int = PANEL_WIDTH, height: int = 72) -> str:
+    """Chip row that overflows the panel, with a fade so the overflow is obvious."""
+    fade_w = 96
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Repos contributed to in the last 90 days">',
+        "<defs>",
+        '<linearGradient id="chipFade" x1="0" y1="0" x2="1" y2="0">',
+        '<stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>',
+        '<stop offset="55%" stop-color="#0d1117" stop-opacity="0.75"/>',
+        '<stop offset="100%" stop-color="#0d1117" stop-opacity="1"/>',
+        "</linearGradient>",
+        f'<clipPath id="chipClip"><rect width="{width}" height="{height}" rx="6"/></clipPath>',
+        "</defs>",
+        f'<rect width="{width}" height="{height}" rx="6" fill="{GRAPH_BG}" stroke="{GRAPH_BORDER}"/>',
+        '<g clip-path="url(#chipClip)">',
+    ]
+    x = 12
+    y = 20
+    chip_h = 32
     for repo in repos:
         short = repo["name"].split("/")[-1]
-        cells.append(
-            "<td valign=\"middle\" nowrap>"
-            f'<a href="https://github.com/{repo["name"]}">{short}</a>&nbsp;'
-            f"<code>{repo['count']}</code>"
-            "</td>"
+        label = f"{short}  {repo['count']}"
+        chip_w = min(max(len(label) * 7 + 24, 80), 176)
+        parts.append(
+            f'<rect x="{x}" y="{y}" width="{chip_w}" height="{chip_h}" rx="16" fill="#161b22" stroke="{GRAPH_BORDER}"/>'
         )
-    return "<table>\n<tr>\n" + "\n".join(cells) + "\n</tr>\n</table>"
+        parts.append(
+            f'<text x="{x + 12}" y="{y + 21}" fill="{GRAPH_TEXT}" font-family="{MONO}" font-size="11">{_xml(label)}</text>'
+        )
+        x += chip_w + 8
+        if x > width + 240:
+            break
+    parts.append(f'<rect x="{width - fade_w}" y="0" width="{fade_w}" height="{height}" fill="url(#chipFade)"/>')
+    parts.append(
+        f'<text x="{width - 14}" y="{height // 2 + 4}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="11">more →</text>'
+    )
+    parts.append("</g></svg>")
+    return "\n".join(parts) + "\n"
 
 
-def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> str:
-    # One full-width SVG — avoids GitHub table/image shrink-wrap dead space.
+def repos_grid_html(repos: list[dict], per_row: int = 4) -> str:
+    """Wrapped chip table — GitHub strips overflow CSS, so wrap instead of a fake scroller."""
+    rows: list[str] = []
+    for i in range(0, len(repos), per_row):
+        chunk = repos[i : i + per_row]
+        tds = []
+        for repo in chunk:
+            short = repo["name"].split("/")[-1]
+            tds.append(
+                '<td valign="middle">'
+                f'<a href="https://github.com/{repo["name"]}"><code>{short}</code></a>'
+                f" · {repo['count']}"
+                "</td>"
+            )
+        while len(tds) < per_row:
+            tds.append("<td></td>")
+        rows.append("<tr>\n" + "\n".join(tds) + "\n</tr>")
+    return "<table width=\"100%\">\n" + "\n".join(rows) + "\n</table>"
+
+
+def render_readme_block() -> str:
     return "\n".join(
         [
             START_MARK,
@@ -611,29 +651,72 @@ def render_readme_block(rows: list[dict], repos: list[dict], lifetime: dict) -> 
             "</a>",
             "</p>",
             "",
-            f"Repos contributed to in the last 90 days ({len(repos)}):",
-            "",
-            repos_row_html(repos),
-            "",
             END_MARK,
             "",
         ]
     )
 
 
-def patch_readme(block: str) -> None:
+def render_contributed_block(repos: list[dict]) -> str:
+    return "\n".join(
+        [
+            CONTRIB_START,
+            "",
+            f"### Repos contributed to in the last 90 days ({len(repos)})",
+            "",
+            "The chip row fades at the edge. Full list is below.",
+            "",
+            '<p align="center">',
+            '<img src="assets/repos-90d.svg" alt="Repos contributed to in the last 90 days" width="100%">',
+            "</p>",
+            "",
+            repos_grid_html(repos),
+            "",
+            CONTRIB_END,
+            "",
+        ]
+    )
+
+
+def patch_readme(activity_block: str, contrib_block: str) -> None:
     text = README.read_text()
     pattern = re.compile(
         re.escape(START_MARK) + r".*?" + re.escape(END_MARK),
         re.DOTALL,
     )
     if pattern.search(text):
-        text = pattern.sub(block.strip(), text)
+        text = pattern.sub(activity_block.strip(), text)
     else:
         section = re.compile(r"(## Activity\n)(.*?)(\n## )", re.DOTALL)
-        text, n = section.subn(r"\1\n" + block + r"\3", text, count=1)
+        text, n = section.subn(r"\1\n" + activity_block + r"\3", text, count=1)
         if n != 1:
             raise SystemExit("failed to insert activity block")
+    contrib_pattern = re.compile(
+        re.escape(CONTRIB_START) + r".*?" + re.escape(CONTRIB_END),
+        re.DOTALL,
+    )
+    if contrib_pattern.search(text):
+        text = contrib_pattern.sub(contrib_block.strip(), text)
+    else:
+        after_top = re.search(
+            r"(## Top repositories\n.*?</table>\n)",
+            text,
+            re.DOTALL,
+        )
+        if after_top:
+            text = (
+                text[: after_top.end()]
+                + "\n"
+                + contrib_block.strip()
+                + "\n\n"
+                + text[after_top.end() :]
+            )
+        else:
+            marker = "## Devrecated Solutions"
+            idx = text.find(marker)
+            if idx < 0:
+                raise SystemExit("failed to insert contributed block")
+            text = text[:idx] + contrib_block.strip() + "\n\n" + text[idx:]
     text = re.sub(
         r"<p align=\"center\">\s*<a href=\"https://github.com/adamsiwiec1\">\s*"
         r"<img src=\"https://ghchart\.rshah\.org/[^\"]+\"[^>]*>\s*</a>\s*</p>\s*",
@@ -673,6 +756,7 @@ def main() -> int:
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
     panel_svg = render_activity_panel(calendar_days, rows, now, lifetime=lifetime)
     OUT_PANEL.write_text(panel_svg)
+    OUT_REPOS.write_text(render_repos_strip_svg(repos))
     # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
@@ -709,7 +793,7 @@ def main() -> int:
         )
         + "\n"
     )
-    patch_readme(render_readme_block(rows, repos, lifetime))
+    patch_readme(render_readme_block(), render_contributed_block(repos))
     old = ROOT / "assets" / "activity-repos.svg"
     if old.exists():
         old.unlink()

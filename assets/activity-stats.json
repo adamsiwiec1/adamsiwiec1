@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-10-13T04:32:13Z",
+  "as_of": "2026-10-13T08:13:03Z",
   "lifetime": {
-    "activity": 10337,
-    "commits": 9291,
-    "edits": 34810060,
+    "activity": 10352,
+    "commits": 9305,
+    "edits": 34824461,
     "created_at": "2020-10-19T01:00:36Z"
   },
   "windows": [
     {
       "days": 90,
-      "activity": 1199,
-      "commits": 912,
-      "edits": 9575229,
+      "activity": 1214,
+      "commits": 926,
+      "edits": 9589630,
       "consistency": [
         71,
         90
@@ -19,9 +19,9 @@
     },
     {
       "days": 60,
-      "activity": 1150,
-      "commits": 867,
-      "edits": 8823954,
+      "activity": 1165,
+      "commits": 881,
+      "edits": 8835912,
       "consistency": [
         57,
         60
@@ -29,9 +29,9 @@
     },
     {
       "days": 30,
-      "activity": 803,
-      "commits": 637,
-      "edits": 2410608,
+      "activity": 818,
+      "commits": 651,
+      "edits": 2425009,
       "consistency": [
         30,
         30
@@ -39,9 +39,9 @@
     },
     {
       "days": 7,
-      "activity": 191,
-      "commits": 155,
-      "edits": 171842,
+      "activity": 206,
+      "commits": 169,
+      "edits": 186243,
       "consistency": [
         7,
         7
@@ -49,7 +49,7 @@
     }
   ],
   "graph_days": 90,
-  "graph_total": 1219,
+  "graph_total": 1234,
   "repos_90d": [
     {
       "name": "openhat-security/runhug",
@@ -58,7 +58,7 @@
     },
     {
       "name": "devrecated/autodevelop",
-      "commits": 147,
+      "commits": 148,
       "private": true
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "adamsiwiec1/adamsiwiec1",
-      "commits": 37,
+      "commits": 47,
       "private": false
     },
     {
@@ -117,6 +117,11 @@
       "private": true
     },
     {
+      "name": "openhat-security/openhat-www",
+      "commits": 16,
+      "private": true
+    },
+    {
       "name": "adamsiwiec1/artwork-studio",
       "commits": 15,
       "private": true
@@ -125,11 +130,6 @@
       "name": "adamsiwiec1/eileen_artwork_gallery",
       "commits": 14,
       "private": false
-    },
-    {
-      "name": "openhat-security/openhat-www",
-      "commits": 13,
-      "private": true
     },
     {
       "name": "devrecated/autodevelop-docs",
