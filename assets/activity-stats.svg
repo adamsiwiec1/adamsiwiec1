@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="352" height="180" viewBox="0 0 352 180" role="img" aria-label="Activity stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="352" height="168" viewBox="0 0 352 168" role="img" aria-label="Activity stats">
 <title>Activity, commits, line edits, and consistency</title>
-<rect width="352" height="180" rx="6" fill="#0d1117" stroke="#30363d"/>
+<rect width="352" height="168" rx="6" fill="#0d1117" stroke="#30363d"/>
 <text x="10" y="14" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="700">Activity</text>
 <text x="342" y="14" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">as of 2026-10-13</text>
 <text x="10" y="28" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">lifetime · 10.4k act · 9.3k commits · 34.8M edits</text>

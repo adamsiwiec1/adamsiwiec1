@@ -181,14 +181,20 @@ def _graph_body(
     oy: int = 0,
     cell: int = 11,
     gap: int = 3,
+    cell_h: int | None = None,
 ) -> tuple[list[str], int, int]:
-    """Return (svg elements, width, height) for the contribution calendar."""
+    """Return (svg elements, width, height) for the contribution calendar.
+
+    cell is the horizontal size so the row still fills leftover width.
+    cell_h is shorter so the panel does not grow with square cells.
+    """
+    cell_w = cell
+    cell_h = cell if cell_h is None else cell_h
     left = 14
-    # Title on its own row; months sit clearly below so they never collide.
-    title_y = 11
-    top = 36
-    width = left + len(weeks) * (cell + gap) + 6
-    height = top + 7 * (cell + gap) + 4
+    title_y = 12
+    top = 26
+    width = left + len(weeks) * (cell_w + gap) + 6
+    height = top + 7 * (cell_h + gap) + 2
 
     month_labels: list[tuple[int, str]] = []
     last_month = None
@@ -203,17 +209,16 @@ def _graph_body(
                 break
 
     parts = [
-        f'<text x="{ox + 8}" y="{oy + title_y}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="10" font-weight="700">Contributions</text>',
-        f'<text x="{ox + width - 8}" y="{oy + title_y}" text-anchor="end" fill="{GRAPH_MUTED}" font-family="{MONO}" font-size="8">90d</text>',
+        f'<text x="{ox + 8}" y="{oy + title_y}" fill="{GRAPH_TEXT}" font-family="{FONT}" font-size="10" font-weight="700">Contributions - Past 90 Days</text>',
     ]
     for i, label in month_labels:
-        x = ox + left + i * (cell + gap)
+        x = ox + left + i * (cell_w + gap)
         parts.append(
-            f'<text x="{x}" y="{oy + top - 5}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
+            f'<text x="{x}" y="{oy + top - 4}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="8">{label}</text>'
         )
 
     for weekday, label in {1: "M", 3: "W", 5: "F"}.items():
-        y = oy + top + weekday * (cell + gap) + cell - 1
+        y = oy + top + weekday * (cell_h + gap) + cell_h - 1
         parts.append(
             f'<text x="{ox + 4}" y="{y}" fill="{GRAPH_MUTED}" font-family="{FONT}" font-size="7">{label}</text>'
         )
@@ -225,12 +230,12 @@ def _graph_body(
             weekday = day.get("weekday")
             if weekday is None:
                 weekday = (dt.date.fromisoformat(day["date"]).weekday() + 1) % 7
-            x = ox + left + wi * (cell + gap)
-            y = oy + top + weekday * (cell + gap)
+            x = ox + left + wi * (cell_w + gap)
+            y = oy + top + weekday * (cell_h + gap)
             count = day["contributionCount"]
             fill = GRAPH_LEVELS[level_for_count(count, max_count)]
             parts.append(
-                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="1" fill="{fill}">'
+                f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="1" fill="{fill}">'
                 f'<title>{day["date"]}: {count} contribution{"s" if count != 1 else ""}</title></rect>'
             )
     return parts, width, height
@@ -247,11 +252,11 @@ def _stats_body(
     height: int,
 ) -> list[str]:
     """Activity table drawn into a panel — last column right-anchored so it never clips."""
-    row_h = max(18, (height - 56) // max(len(rows), 1))
-    y_title = oy + 16
-    y_life = oy + 32
-    y_cols = oy + 48
-    y0 = oy + 66
+    row_h = max(16, (height - 50) // max(len(rows), 1))
+    y_title = oy + 12
+    y_life = oy + 26
+    y_cols = oy + 40
+    y0 = oy + 54
     inset = 12
     right = ox + width - inset
     x0 = ox + inset
@@ -306,8 +311,10 @@ def render_activity_panel(
     graph_area = inner - gap - stats_w
     nweeks = max(len(weeks), 1)
     g_gap = 2
-    cell = max(10, (graph_area - 20) // nweeks - g_gap)
-    g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
+    cell_w = max(10, (graph_area - 20) // nweeks - g_gap)
+    g_parts, g_w, g_h = _graph_body(
+        weeks, max_count, ox=pad, oy=pad, cell=cell_w, gap=g_gap, cell_h=11
+    )
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
     stats_w = PANEL_WIDTH - stats_x - pad
