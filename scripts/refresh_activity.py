@@ -318,8 +318,8 @@ def render_activity_panel(
     inner = PANEL_WIDTH - 2 * pad
     graph_w_target = int(inner * 0.48)
     nweeks = max(len(weeks), 1)
-    cell = max(10, min(14, (graph_w_target - 28) // nweeks - 2))
-    g_gap = 3 if cell >= 12 else 2
+    cell = max(11, min(18, (graph_w_target - 28) // nweeks - 2))
+    g_gap = 3 if cell >= 13 else 2
     g_parts, g_w, g_h = _graph_body(weeks, max_count, ox=pad, oy=pad, cell=cell, gap=g_gap)
     height = g_h + 2 * pad
     stats_x = pad + g_w + gap
