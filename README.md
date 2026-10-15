@@ -2,7 +2,11 @@
   <img src="assets/banner.svg" alt="adam siwiec. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
-I run two companies. **Devrecated Solutions** puts process, gates, and evidence around AI coding agents. **OpenHat Security** does authorized offensive security against an AI-scale attack surface, then leaves the findings, the logs, and the fix.
+Seasoned Solution Architect and Software Engineer. Expert in implementing data-driven, machine learning enhanced software solutions. 
+
+Founder of Devrecated Solutions and OpenHat Security. 
+
+Use the following link to schedule a call with me. I can ship your idea to production within a matter of days. https://cal.com/adamsiw/15min
 
 <table>
 <tr>
