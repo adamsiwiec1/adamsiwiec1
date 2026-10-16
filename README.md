@@ -6,7 +6,7 @@ Seasoned Solution Architect, Software Engineer, and Entreprenuer. I build system
 
 [Use this link](https://cal.com/adamsiw/15min) to schedule a call with me. I can ship your idea to production within a matter of days. 
 
-**My core expertise is in implementing full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions.** 
+***My core expertise is implementing full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of my clients.*** 
 
 Founder of Devrecated Solutions and OpenHat Security, which are my current priorities. 
 
