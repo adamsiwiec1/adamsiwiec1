@@ -492,6 +492,11 @@ Document sharing models and projects across login users. Merged.
 <a href="https://github.com/term7/MacOS-Privacy-and-Security-Enhancements/pull/3"><strong>term7/MacOS-Privacy-and-Security-Enhancements</strong></a> · GPL-3.0<br>
 SpoofMAC drops the MacPorts and Node dependency and randomizes the MAC with macOS built-ins. Merged.
 
+
+<a href="https://github.com/eugenioenko/ttt/pull/926"><strong>eugenioenko/ttt</strong></a> · MIT<br>
+fix(editor): ask before Save As replaces a dangling symlink or hard link
+
+
 </td>
 </tr>
 </table>
