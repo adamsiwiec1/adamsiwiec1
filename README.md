@@ -2,11 +2,18 @@
   <img src="assets/banner.svg" alt="adam siwiec. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
-Seasoned Solution Architect and Software Engineer. Expert in implementing data-driven, machine learning enhanced software solutions. 
-
-Founder of Devrecated Solutions and OpenHat Security. 
+Seasoned Solution Architect, Software Engineer, and Entreprenuer. I build systems and software which enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. 
 
 [Use this link](https://cal.com/adamsiw/15min) to schedule a call with me. I can ship your idea to production within a matter of days. 
+
+**My core expertise is in implementing full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions.** 
+
+Founder of Devrecated Solutions and OpenHat Security, which are my current priorities. 
+
+Previously, Founder of FreeTech, a traditional software agency, who served clients in a variety of industries between March '21 - September '26. FreeTech surpasses 1M ARR in May 24', up from around 400k ARR in 23', following me joining my team full time as CEO in December '23. after  FreeTech reached it's shelf life - the AI boom deprecated traditional software agencies, in an effort to pivot with market trends and advancements in technology, FreeTech has closed its doors, and Devrecated Solutions was born.
+
+Devrecated still enables clients with software Solutions, similar to FreeTech, except, the methodology and strategy is much more advanced, tailored directly and specifically to each individual client in a manner not offered by any software solutions provider worldwide. How can I say this with certainty? Because what we offer hasn't existed until recently. I spent 1000s of hours, and have been trying to build a product like AutoDevelop, the flagship product offered at Devrecated Solutions, for over 3 years now. I failed, time and time again, until recently when several sets of new technologies were released which made our vision possible. Learn more at [devrecated.com](https://devrecated.com].
+
 
 <table>
 <tr>
