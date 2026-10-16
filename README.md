@@ -12,7 +12,11 @@ Founder of Devrecated Solutions and OpenHat Security, which are my current prior
 
 Previously, Founder of FreeTech, a traditional software agency, who served clients in a variety of industries between March '21 - September '26. FreeTech surpasses 1M ARR in May 24', up from around 400k ARR in 23', following me joining my team full time as CEO in December '23. after  FreeTech reached it's shelf life - the AI boom deprecated traditional software agencies, in an effort to pivot with market trends and advancements in technology, FreeTech has closed its doors, and Devrecated Solutions was born.
 
-Devrecated still enables clients with software Solutions, similar to FreeTech, except, the methodology and strategy is much more advanced, tailored directly and specifically to each individual client in a manner not offered by any software solutions provider worldwide. How can I say this with certainty? Because what we offer hasn't existed until recently. I spent 1000s of hours, and have been trying to build a product like AutoDevelop, the flagship product offered at Devrecated Solutions, for over 3 years now. I failed, time and time again, until recently when several sets of new technologies were released which made our vision possible. Learn more at [devrecated.com](https://devrecated.com].
+Devrecated still enables clients with software Solutions, similar to FreeTech, except, the methodology and strategy is much more advanced, tailored directly and specifically to each individual client in a manner not offered by any software solutions provider worldwide. 
+
+How can I say this with certainty? Because what we offer hasn't existed until very recently. I've spent 1000s of hours, and have been trying to build a product like AutoDevelop, our flagship product offered at Devrecated Solutions, for over 3 years now. 
+
+I failed, time and time again, until recently when several sets of new technologies were released. These recent advancements, combined with my diverse knowledge of solutions across the industry, along with the variety of methodologies I've implemented over the years throughout my R&D, are what made our vision possible. Learn more at [devrecated.com](https://devrecated.com].
 
 
 <table>
