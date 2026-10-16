@@ -6,7 +6,7 @@ Seasoned Solution Architect and Software Engineer. Expert in implementing data-d
 
 Founder of Devrecated Solutions and OpenHat Security. 
 
-Use the following link to schedule a call with me. I can ship your idea to production within a matter of days. https://cal.com/adamsiw/15min
+[Use this link](https://cal.com/adamsiw/15min) to schedule a call with me. I can ship your idea to production within a matter of days. 
 
 <table>
 <tr>
