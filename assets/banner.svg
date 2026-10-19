@@ -2,20 +2,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 376" role="img" aria-label="adam siwiec. Seasoned Solution Architect, Software Engineer, and Entrepreneur. I build systems and software that enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
   <title>adam siwiec</title>
   <defs>
-    <linearGradient id="gName" x1="0" y1="0" x2="1" y2="0.35">
-      <stop offset="0" stop-color="#141414"/>
-      <stop offset="0.55" stop-color="#2f2b55"/>
-      <stop offset="1" stop-color="#5a46a8"/>
+    <linearGradient id="bgBase" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f3ec"/>
+      <stop offset="0.55" stop-color="#f4f2ee"/>
+      <stop offset="1" stop-color="#eef2f7"/>
     </linearGradient>
-    <linearGradient id="gLead" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#141414"/>
-      <stop offset="0.7" stop-color="#2f2b55"/>
-      <stop offset="1" stop-color="#4b3d8f"/>
-    </linearGradient>
-    <linearGradient id="gBody" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#3a3632"/>
-      <stop offset="1" stop-color="#4a4466"/>
-    </linearGradient>
+    <radialGradient id="blobWarm" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f3c9a8" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#f3c9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blobCool" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b9c8f2" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#b9c8f2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blobLilac" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d9c9f0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#d9c9f0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="1" fill="#141414" fill-opacity="0.06"/>
+    </pattern>
+    <radialGradient id="dotFade" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.15"/>
+    </radialGradient>
+    <mask id="dotMask"><rect width="1200" height="376" fill="url(#dotFade)"/></mask>
+    <clipPath id="frame"><rect x="0.5" y="0.5" width="1199" height="375" rx="18"/></clipPath>
   </defs>
   <style>
     .name { opacity: 0; transform: translateY(10px); animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0s forwards; }
@@ -36,10 +48,17 @@
       .name, .underline, .intro-rule, .drop, .pop, .intro { animation: none !important; opacity: 1 !important; transform: none !important; }
     }
   </style>
-  <rect width="1200" height="376" fill="#f4f1eb"/>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="376" fill="url(#bgBase)"/>
+    <ellipse cx="60" cy="40" rx="360" ry="230" fill="url(#blobWarm)"/>
+    <ellipse cx="1160" cy="350" rx="420" ry="250" fill="url(#blobCool)"/>
+    <ellipse cx="1120" cy="10" rx="260" ry="170" fill="url(#blobLilac)"/>
+    <rect width="1200" height="376" fill="url(#dots)" mask="url(#dotMask)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="375" rx="18" fill="none" stroke="#141414" stroke-opacity="0.12" stroke-width="1"/>
   <!-- one-line name -->
-  <text class="name" x="56" y="108" fill="url(#gName)" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">adam siwiec</text>
-  <rect class="underline" x="58" y="124" width="220" height="3" fill="url(#gName)"/>
+  <text class="name" x="56" y="108" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">adam siwiec</text>
+  <rect class="underline" x="58" y="124" width="220" height="3" fill="#111111"/>
 
   <!-- languages / skills -->
   <g class="drop" style="animation-delay:0.10s">
@@ -168,7 +187,7 @@
   </g>
 
   <rect class="intro-rule" x="56" y="258" width="1088" height="1" fill="#ddd6cc"/>
-  <text class="intro d1" x="56" y="298" fill="url(#gLead)" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
-  <text class="intro d2" x="56" y="330" fill="url(#gBody)" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
-  <text class="intro d3" x="56" y="358" fill="url(#gBody)" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
+  <text class="intro d1" x="56" y="298" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
+  <text class="intro d2" x="56" y="330" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
+  <text class="intro d3" x="56" y="358" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
 </svg>
