@@ -10,7 +10,7 @@ Seasoned Solution Architect, Software Engineer, and Entreprenuer. I build system
 
 Founder of Devrecated Solutions and OpenHat Security, which are my current priorities. 
 
-Previously, Founder of FreeTech, a traditional software agency, who served clients in a variety of industries between March '21 - September '26. FreeTech surpasses 1M ARR in May 24', up from around 400k ARR in 23', following me joining my team full time as CEO in December '23. after  FreeTech reached it's shelf life - the AI boom deprecated traditional software agencies, in an effort to pivot with market trends and advancements in technology, FreeTech has closed its doors, and Devrecated Solutions was born.
+Previously, Founder of FreeTech, a traditional software agency, who served clients in a variety of industries between March '21 - September '26. FreeTech surpasses 1M ARR in May 24', up from around 400k ARR in 23', following me joining my team full time as CEO in December '23. FreeTech reached it's shelf life in Q3 '26, along with all traditional software in my opinion, which is when I founded Devrecated and OpenHat.
 
 Devrecated still enables clients with software Solutions, similar to FreeTech, except, the methodology and strategy is much more advanced, tailored directly and specifically to each individual client in a manner not offered by any software solutions provider worldwide. 
 
