@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 248" role="img" aria-label="adam siwiec. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 376" role="img" aria-label="adam siwiec. Seasoned Solution Architect, Software Engineer, and Entrepreneur. I build systems and software that enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
   <title>adam siwiec</title>
-  <rect width="1200" height="248" fill="#f4f1eb"/>
+  <rect width="1200" height="376" fill="#f4f1eb"/>
   <!-- one-line name -->
   <text x="56" y="108" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">adam siwiec</text>
   <rect x="58" y="124" width="220" height="3" fill="#141414"/>
@@ -102,4 +102,22 @@
       <path fill="#e10600" d="M144 88 L178 62 L162 98 L196 108 L160 114 L176 152 L144 124 L128 148 L134 114 L102 106 L134 100 Z"/>
     </g>
 <g fill="#141414" transform="translate(391.66 214.00) scale(0.015000 -0.015000)"><path d="M340 -19Q268 -19 212.5 3.5Q157 26 119.0 65.5Q81 105 61.0 155.0Q41 205 41 260V282Q41 338 61.5 389.0Q82 440 121.0 479.5Q160 519 215.5 541.5Q271 564 340 564Q410 564 465.0 541.5Q520 519 558.5 479.5Q597 440 617.5 389.0Q638 338 638 282V260Q638 205 618.5 155.0Q599 105 560.5 65.5Q522 26 467.0 3.5Q412 -19 340 -19ZM340 106Q389 106 422.5 127.5Q456 149 473.5 186.5Q491 224 491 271Q491 320 473.0 357.5Q455 395 421.0 416.5Q387 438 340 438Q293 438 259.0 416.5Q225 395 207.0 357.5Q189 320 189 271Q189 224 206.5 186.5Q224 149 257.5 127.5Q291 106 340 106Z" transform="translate(0.00 0.00)"/><path d="M76 -200V545H193V310H176Q180 393 210.5 449.0Q241 505 292.0 533.5Q343 562 406 562Q464 562 510.5 540.5Q557 519 590.5 481.5Q624 444 641.5 393.5Q659 343 659 284V262Q659 203 642.0 152.0Q625 101 592.0 63.0Q559 25 512.0 3.5Q465 -18 406 -18Q345 -18 295.0 7.5Q245 33 214.0 86.0Q183 139 180 222L224 158V-200ZM367 106Q410 106 442.5 127.0Q475 148 493.5 186.0Q512 224 512 273Q512 323 493.5 360.0Q475 397 443.0 417.5Q411 438 367 438Q328 438 294.5 420.5Q261 403 240.5 369.5Q220 336 220 288V249Q220 204 241.5 172.0Q263 140 296.5 123.0Q330 106 367 106Z" transform="translate(680.00 0.00)"/><path d="M323 -19Q253 -19 200.0 5.0Q147 29 112.0 69.5Q77 110 59.0 160.0Q41 210 41 263V282Q41 336 59.0 386.5Q77 437 111.5 477.0Q146 517 198.0 540.5Q250 564 317 564Q405 564 464.5 525.0Q524 486 555.0 423.0Q586 360 586 287V235H104V323H495L448 281Q448 332 433.5 368.0Q419 404 390.0 423.5Q361 443 317 443Q272 443 241.0 422.5Q210 402 194.5 364.0Q179 326 179 272Q179 221 194.0 183.0Q209 145 241.0 123.5Q273 102 323 102Q371 102 401.5 121.0Q432 140 441 168H576Q565 112 530.5 70.0Q496 28 443.0 4.5Q390 -19 323 -19Z" transform="translate(1380.00 0.00)"/><path d="M76 0V545H193V311H184Q184 394 205.5 450.0Q227 506 271.0 534.0Q315 562 379 562H385Q482 562 532.0 499.5Q582 437 582 312V0H435V323Q435 370 407.5 400.0Q380 430 332 430Q283 430 253.5 399.5Q224 369 224 319V0Z" transform="translate(2002.00 0.00)"/><path d="M76 0V730H224V306H200Q200 388 221.0 445.0Q242 502 283.5 532.0Q325 562 387 562H394Q486 562 534.0 497.5Q582 433 582 310V0H435V323Q435 371 406.5 400.5Q378 430 332 430Q284 430 254.0 398.0Q224 366 224 315V0Z" transform="translate(2652.00 0.00)"/><path d="M406 0V161H382V339Q382 384 360.0 406.0Q338 428 292 428Q268 428 232.5 427.0Q197 426 160.5 424.5Q124 423 95 421V546Q118 548 147.5 550.0Q177 552 209.0 552.5Q241 553 268 553Q352 553 408.5 530.5Q465 508 494.0 460.0Q523 412 523 336V0ZM231 -14Q172 -14 127.5 7.0Q83 28 58.5 67.0Q34 106 34 161Q34 221 64.0 259.5Q94 298 148.5 316.5Q203 335 275 335H398V250H274Q228 250 204.0 227.5Q180 205 180 169Q180 133 204.0 111.5Q228 90 274 90Q302 90 325.5 100.0Q349 110 364.5 134.5Q380 159 382 202L417 162Q412 105 389.5 66.0Q367 27 327.5 6.5Q288 -14 231 -14Z" transform="translate(3302.00 0.00)"/><path d="M317 -7Q239 -7 189.5 13.0Q140 33 116.5 80.0Q93 127 93 208V696H231L230 200Q230 161 251.5 139.5Q273 118 312 118H395V-7ZM8 437V545H395V437Z" transform="translate(3892.00 0.00)"/></g>
+
+  <!-- intro: staggered fade + slide-up, plays once -->
+  <style>
+    .intro { opacity: 0; transform: translateY(14px); animation: introIn 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .intro-rule { opacity: 0; transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation: ruleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .d1 { animation-delay: 0.12s; }
+    .d2 { animation-delay: 0.30s; }
+    .d3 { animation-delay: 0.46s; }
+    @keyframes introIn { to { opacity: 1; transform: translateY(0); } }
+    @keyframes ruleIn { to { opacity: 1; transform: scaleX(1); } }
+    @media (prefers-reduced-motion: reduce) {
+      .intro, .intro-rule { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+  <rect class="intro-rule" x="56" y="258" width="1088" height="1" fill="#ddd6cc"/>
+  <text class="intro d1" x="56" y="298" fill="#141414" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
+  <text class="intro d2" x="56" y="330" fill="#3a3632" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
+  <text class="intro d3" x="56" y="358" fill="#3a3632" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
 </svg>
