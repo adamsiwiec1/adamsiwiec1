@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 376" role="img" aria-label="adam siwiec. Seasoned Solution Architect, Software Engineer, and Entrepreneur. I build systems and software that enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" role="img" aria-label="adam siwiec. Seasoned Solution Architect, Software Engineer, and Entrepreneur. I build systems and software that enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
   <title>adam siwiec</title>
   <defs>
     <linearGradient id="bgBase" x1="0" y1="0" x2="1" y2="1">
@@ -26,8 +26,8 @@
       <stop offset="0" stop-color="#fff" stop-opacity="1"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0.15"/>
     </radialGradient>
-    <mask id="dotMask"><rect width="1200" height="376" fill="url(#dotFade)"/></mask>
-    <clipPath id="frame"><rect x="0.5" y="0.5" width="1199" height="375" rx="18"/></clipPath>
+    <mask id="dotMask"><rect width="1200" height="410" fill="url(#dotFade)"/></mask>
+    <clipPath id="frame"><rect x="0.5" y="0.5" width="1199" height="409" rx="18"/></clipPath>
   </defs>
   <style>
     .name { opacity: 0; transform: translateY(10px); animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0s forwards; }
@@ -44,18 +44,39 @@
     @keyframes draw { to { opacity: 1; transform: scaleX(1); } }
     @keyframes drop { 0% { opacity: 0; transform: translateY(-22px); } 65% { opacity: 1; transform: translateY(3px); } 100% { opacity: 1; transform: translateY(0); } }
     @keyframes pop { to { opacity: 1; transform: scale(1); } }
+    /* salt shaker */
+    .shaker { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; transform: rotate(135deg); animation: shake 1.35s cubic-bezier(0.45, 0, 0.25, 1) 1.12s forwards; }
+    .speck { opacity: 0; animation: sprinkle 0.55s cubic-bezier(0.55, 0, 0.9, 0.6) forwards; }
+    @keyframes shake {
+      0% { opacity: 0; transform: translate(-6px, -6px) rotate(110deg); }
+      12% { opacity: 1; transform: translate(0, 0) rotate(135deg); }
+      24% { transform: translate(2px, 3px) rotate(158deg); }
+      36% { transform: translate(-1px, -1px) rotate(128deg); }
+      48% { transform: translate(2px, 3px) rotate(160deg); }
+      60% { transform: translate(-1px, -1px) rotate(130deg); }
+      70% { opacity: 1; transform: translate(2px, 2px) rotate(156deg); }
+      82% { opacity: 1; transform: translate(0, -2px) rotate(120deg); }
+      100% { opacity: 0; transform: translate(-4px, -8px) rotate(100deg); }
+    }
+    @keyframes sprinkle {
+      0% { opacity: 0; transform: translate(0, 0); }
+      12% { opacity: 1; }
+      82% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
+    }
     @media (prefers-reduced-motion: reduce) {
+      .shaker, .speck { display: none !important; }
       .name, .underline, .intro-rule, .drop, .pop, .intro { animation: none !important; opacity: 1 !important; transform: none !important; }
     }
   </style>
   <g clip-path="url(#frame)">
-    <rect width="1200" height="376" fill="url(#bgBase)"/>
+    <rect width="1200" height="410" fill="url(#bgBase)"/>
     <ellipse cx="60" cy="40" rx="360" ry="230" fill="url(#blobWarm)"/>
     <ellipse cx="1160" cy="350" rx="420" ry="250" fill="url(#blobCool)"/>
     <ellipse cx="1120" cy="10" rx="260" ry="170" fill="url(#blobLilac)"/>
-    <rect width="1200" height="376" fill="url(#dots)" mask="url(#dotMask)"/>
+    <rect width="1200" height="410" fill="url(#dots)" mask="url(#dotMask)"/>
   </g>
-  <rect x="0.5" y="0.5" width="1199" height="375" rx="18" fill="none" stroke="#141414" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="1199" height="409" rx="18" fill="none" stroke="#141414" stroke-opacity="0.12" stroke-width="1"/>
   <!-- one-line name -->
   <text class="name" x="56" y="108" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">adam siwiec</text>
   <rect class="underline" x="58" y="124" width="220" height="3" fill="#111111"/>
@@ -187,7 +208,35 @@
   </g>
 
   <rect class="intro-rule" x="56" y="258" width="1088" height="1" fill="#ddd6cc"/>
-  <text class="intro d1" x="56" y="298" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
-  <text class="intro d2" x="56" y="330" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
-  <text class="intro d3" x="56" y="358" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
+  <text class="intro d1" x="56" y="332" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
+  <text class="intro d2" x="56" y="364" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
+  <text class="intro d3" x="56" y="392" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
+  <!-- salt shaker: shakes over "Seasoned", then fades -->
+  <g aria-hidden="true">
+    <circle class="speck" cx="117.1" cy="291.3" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:10.5px;--dy:25.1px;animation-delay:1.36s"/>
+    <circle class="speck" cx="118.2" cy="291.7" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-22.8px;--dy:26.8px;animation-delay:1.42s"/>
+    <circle class="speck" cx="115.7" cy="291.9" r="1.3" fill="#111111" style="--dx:-22.1px;--dy:24.6px;animation-delay:1.47s"/>
+    <circle class="speck" cx="117.6" cy="292.7" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-19.1px;--dy:24.5px;animation-delay:1.53s"/>
+    <circle class="speck" cx="118.6" cy="292.9" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:6.3px;--dy:25.1px;animation-delay:1.58s"/>
+    <circle class="speck" cx="120.4" cy="291.1" r="1.3" fill="#111111" style="--dx:22.1px;--dy:26.4px;animation-delay:1.64s"/>
+    <circle class="speck" cx="116.2" cy="291.2" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-8.7px;--dy:28.8px;animation-delay:1.69s"/>
+    <circle class="speck" cx="116.4" cy="292.2" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:9.8px;--dy:25.7px;animation-delay:1.75s"/>
+    <circle class="speck" cx="118.2" cy="291.1" r="1.3" fill="#111111" style="--dx:-22.7px;--dy:25.9px;animation-delay:1.80s"/>
+    <circle class="speck" cx="118.9" cy="291.9" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-8.4px;--dy:27.1px;animation-delay:1.85s"/>
+    <circle class="speck" cx="117.8" cy="291.6" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:18.5px;--dy:27.9px;animation-delay:1.91s"/>
+    <circle class="speck" cx="116.7" cy="292.1" r="1.3" fill="#111111" style="--dx:3.4px;--dy:28.2px;animation-delay:1.97s"/>
+    <circle class="speck" cx="119.1" cy="291.6" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:28.9px;--dy:25.0px;animation-delay:2.02s"/>
+    <circle class="speck" cx="117.6" cy="292.5" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-17.5px;--dy:25.9px;animation-delay:2.08s"/>
+    <g transform="translate(110 280)">
+      <g class="shaker">
+        <path d="M-7 -3.5 L-8.2 10.5 Q-8.4 13 -5.8 13 L5.8 13 Q8.4 13 8.2 10.5 L7 -3.5 Z" fill="#ffffff" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="-7.8" y="-6.4" width="15.6" height="3.2" rx="1" fill="#111111"/>
+        <path d="M-6.6 -6.4 L-6.6 -9 Q-6.6 -13 -2.6 -13 L2.6 -13 Q6.6 -13 6.6 -9 L6.6 -6.4 Z" fill="#ffffff" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="-2.6" cy="-9.6" r="0.9" fill="#111111"/>
+        <circle cx="0" cy="-10.6" r="0.9" fill="#111111"/>
+        <circle cx="2.6" cy="-9.6" r="0.9" fill="#111111"/>
+        <path d="M-4.2 0 L-4.8 8.5" stroke="#111111" stroke-opacity="0.18" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
 </svg>
