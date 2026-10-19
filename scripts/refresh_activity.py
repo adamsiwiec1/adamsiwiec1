@@ -776,6 +776,12 @@ def main() -> int:
     created = dt.datetime.fromisoformat(lifetime["created_at"].replace("Z", "+00:00"))
     edits, lifetime_edits = line_edits(now, edit_repos, since=created, max_pages=10)
     lifetime["edits"] = lifetime_edits
+    # Lifetime totals only grow. If this token sees less (e.g. an org hides
+    # private contributions from it), keep the previous published totals.
+    if OUT_JSON.exists():
+        previous = json.loads(OUT_JSON.read_text()).get("lifetime", {})
+        for key in ("activity", "commits", "edits"):
+            lifetime[key] = max(lifetime[key], int(previous.get(key) or 0))
     rows = [
         {
             "days": days,
@@ -788,7 +794,9 @@ def main() -> int:
         }
         for days in WINDOWS
     ]
-    repos = by_window[90]["repos"]
+    # Per-repo names are only ever published for public repos. Private repo
+    # activity still counts toward every total above, but never by name.
+    repos = [r for r in by_window[90]["repos"] if not r["private"]]
 
     OUT_STATS.parent.mkdir(parents=True, exist_ok=True)
     panel_svg = render_activity_panel(calendar_days, rows, now, lifetime=lifetime)
@@ -823,7 +831,7 @@ def main() -> int:
                 "graph_days": len(calendar_days),
                 "graph_total": sum(d["contributionCount"] for d in calendar_days),
                 "repos_90d": [
-                    {"name": r["name"], "commits": r["count"], "private": r["private"]}
+                    {"name": r["name"], "commits": r["count"]}
                     for r in repos
                 ],
             },

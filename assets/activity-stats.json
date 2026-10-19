@@ -61,318 +61,151 @@
   "repos_90d": [
     {
       "name": "openhat-security/runhug",
-      "commits": 152,
-      "private": false
-    },
-    {
-      "name": "devrecated/autodevelop",
-      "commits": 148,
-      "private": true
-    },
-    {
-      "name": "the-freetech-company/otw-portal-react",
-      "commits": 125,
-      "private": true
+      "commits": 152
     },
     {
       "name": "adamsiwiec1/adamsiwiec1",
-      "commits": 47,
-      "private": false
+      "commits": 47
     },
     {
       "name": "openhat-security/ohqs",
-      "commits": 37,
-      "private": false
+      "commits": 37
     },
     {
       "name": "openhat-security/oniongate",
-      "commits": 34,
-      "private": false
+      "commits": 34
     },
     {
       "name": "devrecated/healthcare-marketing-demo",
-      "commits": 32,
-      "private": false
+      "commits": 32
     },
     {
       "name": "openhat-security/truffles",
-      "commits": 32,
-      "private": false
-    },
-    {
-      "name": "devrecated/docgen",
-      "commits": 31,
-      "private": true
+      "commits": 32
     },
     {
       "name": "devrecated/autodevelop-cli",
-      "commits": 21,
-      "private": false
-    },
-    {
-      "name": "devrecated/devrecated-www",
-      "commits": 18,
-      "private": true
+      "commits": 21
     },
     {
       "name": "openhat-security/ios-max-security",
-      "commits": 18,
-      "private": false
-    },
-    {
-      "name": "openhat-security/runhug-web",
-      "commits": 17,
-      "private": true
-    },
-    {
-      "name": "openhat-security/openhat-www",
-      "commits": 16,
-      "private": true
-    },
-    {
-      "name": "adamsiwiec1/artwork-studio",
-      "commits": 15,
-      "private": true
+      "commits": 18
     },
     {
       "name": "adamsiwiec1/eileen_artwork_gallery",
-      "commits": 14,
-      "private": false
+      "commits": 14
     },
     {
       "name": "devrecated/autodevelop-docs",
-      "commits": 10,
-      "private": false
+      "commits": 10
     },
     {
       "name": "openhat-security/.github",
-      "commits": 10,
-      "private": false
+      "commits": 10
     },
     {
       "name": "devrecated/acme-portal",
-      "commits": 9,
-      "private": false
+      "commits": 9
     },
     {
       "name": "openhat-security/hfpacks",
-      "commits": 8,
-      "private": false
+      "commits": 8
     },
     {
       "name": "openhat-security/homebrew-tap",
-      "commits": 8,
-      "private": false
-    },
-    {
-      "name": "openhat-security/truffles-web",
-      "commits": 8,
-      "private": true
-    },
-    {
-      "name": "the-freetech-company/otw-marketing",
-      "commits": 8,
-      "private": true
-    },
-    {
-      "name": "adamsiwiec1/artwork-studio-marketing",
-      "commits": 7,
-      "private": true
-    },
-    {
-      "name": "devrecated/operations",
-      "commits": 7,
-      "private": true
+      "commits": 8
     },
     {
       "name": "adamsiwiec1/editable-website",
-      "commits": 6,
-      "private": false
+      "commits": 6
     },
     {
       "name": "adamsiwiec1/foss-template",
-      "commits": 6,
-      "private": false
-    },
-    {
-      "name": "devrecated/sales",
-      "commits": 6,
-      "private": true
+      "commits": 6
     },
     {
       "name": "openhat-security/cli-marketing-template",
-      "commits": 5,
-      "private": false
+      "commits": 5
     },
     {
       "name": "openhat-security/phishkit",
-      "commits": 5,
-      "private": false
+      "commits": 5
     },
     {
       "name": "adamsiwiec1/backblaze-b2-backup-audit",
-      "commits": 4,
-      "private": false
-    },
-    {
-      "name": "devrecated/autodevelop-www",
-      "commits": 4,
-      "private": true
-    },
-    {
-      "name": "devrecated/discord-api",
-      "commits": 4,
-      "private": true
+      "commits": 4
     },
     {
       "name": "openhat-security/scoop-bucket",
-      "commits": 4,
-      "private": false
-    },
-    {
-      "name": "adamsiwiec1/degen-analyzer",
-      "commits": 3,
-      "private": true
+      "commits": 4
     },
     {
       "name": "adamsiwiec1/rclone-backblaze-b2-setup",
-      "commits": 3,
-      "private": false
+      "commits": 3
     },
     {
       "name": "devrecated/.github",
-      "commits": 3,
-      "private": false
-    },
-    {
-      "name": "devrecated/features",
-      "commits": 3,
-      "private": true
-    },
-    {
-      "name": "the-freetech-company/contracts",
-      "commits": 3,
-      "private": true
-    },
-    {
-      "name": "adamsiwiec1/dot-cursor",
-      "commits": 2,
-      "private": true
-    },
-    {
-      "name": "devrecated/README",
-      "commits": 2,
-      "private": false
+      "commits": 3
     },
     {
       "name": "devrecated/acme-portal-lytenyte",
-      "commits": 2,
-      "private": false
-    },
-    {
-      "name": "devrecated/grokbot",
-      "commits": 2,
-      "private": true
+      "commits": 2
     },
     {
       "name": "devrecated/homebrew-tap",
-      "commits": 2,
-      "private": false
-    },
-    {
-      "name": "devrecated/layoff-analyzer",
-      "commits": 2,
-      "private": true
+      "commits": 2
     },
     {
       "name": "devrecated/scoop-bucket",
-      "commits": 2,
-      "private": false
-    },
-    {
-      "name": "openhat-security/openhat-search",
-      "commits": 2,
-      "private": true
+      "commits": 2
     },
     {
       "name": "openhat-security/packages",
-      "commits": 2,
-      "private": false
-    },
-    {
-      "name": "the-freetech-company/bluewire-legal-backup",
-      "commits": 2,
-      "private": true
+      "commits": 2
     },
     {
       "name": "unslothai/unsloth",
-      "commits": 2,
-      "private": false
+      "commits": 2
     },
     {
       "name": "adamsiwiec1/awesome-docs-generator",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "adamsiwiec1/chocolatey-packages",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "adamsiwiec1/homebrew-tap",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "adamsiwiec1/monorepo-secret-manager",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "adamsiwiec1/packages",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "adamsiwiec1/scoop-bucket",
-      "commits": 1,
-      "private": false
-    },
-    {
-      "name": "devrecated/crossfire-demo",
-      "commits": 1,
-      "private": true
+      "commits": 1
     },
     {
       "name": "devrecated/grokbot-skills",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "devrecated/packages",
-      "commits": 1,
-      "private": false
-    },
-    {
-      "name": "openhat-security/exploitgenie",
-      "commits": 1,
-      "private": true
+      "commits": 1
     },
     {
       "name": "openhat-security/go-cli-packaging-template",
-      "commits": 1,
-      "private": false
+      "commits": 1
     },
     {
       "name": "term7/MacOS-Privacy-and-Security-Enhancements",
-      "commits": 1,
-      "private": false
-    },
-    {
-      "name": "the-freetech-company/otw-fb-marketplace-mcp-testing",
-      "commits": 1,
-      "private": true
+      "commits": 1
     }
   ]
 }
