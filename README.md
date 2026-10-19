@@ -2,7 +2,8 @@
   <img src="assets/banner.svg" alt="adam siwiec. Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur. I build systems and software that help clients start, scale, and pivot with advanced AI/ML, contribute to open source, and mentor engineers in software engineering, AI/ML, and offensive security. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
-<p align="center"><a href="https://cal.com/adamsiw/15min"><img alt="Book a 15-min call" src="https://img.shields.io/badge/Book_a_15--min_call-cal.com-111111?style=for-the-badge&logo=cal.com&logoColor=white" height="24" align="absmiddle"></a>&nbsp;&nbsp;<b>From idea to production in days.</b></p>
+<p align="center"><a href="https://cal.com/adamsiw/15min"><img src="assets/cta/book-call.svg" alt="Book a 15-min call" height="52" align="absmiddle"></a>&nbsp;&nbsp;<b>From idea to production in days.</b></p>
+<p align="center"><a href="https://www.linkedin.com/in/adam-siwiec/"><img src="assets/cta/linkedin.svg" alt="LinkedIn" height="46"></a><a href="https://www.youtube.com/@devrecated"><img src="assets/cta/youtube.svg" alt="YouTube" height="46"></a><a href="https://truffles.devrecated.com/"><img src="assets/cta/truffles.svg" alt="Truffles" height="46"></a><a href="https://runhug.devrecated.com/"><img src="assets/cta/runhug.svg" alt="runhug" height="46"></a><a href="https://profile.hackthebox.com/profile/01a14e07-c53a-72e0-bae5-aaf48caad713"><img src="assets/cta/hackthebox.svg" alt="Hack The Box" height="46"></a></p>
 
 ***My core expertise is implementing full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of my clients.*** 
 

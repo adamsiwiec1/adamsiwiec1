@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="46" viewBox="0 0 130 46" role="img" aria-label="LinkedIn">
+  <title>LinkedIn</title>
+  <defs><filter id="s" x="-10%" y="-30%" width="120%" height="170%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.8" flood-color="#000" flood-opacity="0.10"/></filter></defs>
+  <rect x="5.5" y="5.5" width="119" height="33" rx="16.5" fill="#ffffff" stroke="#d0d7de" filter="url(#s)"/>
+  <svg x="20" y="13.0" width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><circle cx="6.6" cy="6.7" r="1.75" fill="#fff"/><rect x="5" y="9.4" width="3.2" height="9.6" fill="#fff"/><path d="M10.4 9.4h3.05v1.35c.45-.85 1.55-1.65 3.2-1.65 3.25 0 3.85 2.1 3.85 4.85V19h-3.2v-4.45c0-1.1-.05-2.5-1.55-2.5s-1.8 1.2-1.8 2.4V19h-3.2z" fill="#fff"/></svg>
+  <text x="78.0" y="26.7" text-anchor="middle" fill="#1f2328" font-family="Segoe UI, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.1">LinkedIn</text>
+</svg>
