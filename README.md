@@ -43,8 +43,6 @@ I failed, time and time again, until recently when several sets of new technolog
 </a>
 </p>
 
-**Recently (Oct 2026):** shipped [grokbot-skills](https://github.com/devrecated/grokbot-skills) ([Discord Bot Engineer](https://github.com/devrecated/grokbot-skills/pull/1), [routine-run-log](https://github.com/devrecated/grokbot-skills/pull/3)) · launched [leakcheck](https://github.com/openhat-security/leakcheck) with [live streaming findings](https://github.com/openhat-security/leakcheck/pull/1) · merged [ttt #969](https://github.com/eugenioenko/ttt/pull/969) and [#951](https://github.com/eugenioenko/ttt/pull/951) · opened Linux build PRs on [grok-bot-linux-unofficial](https://github.com/jakob-bu/grok-bot-linux-unofficial/pulls?q=author%3Aadamsiwiec1) and [OpenDisk #13](https://github.com/137137137/OpenDisk/pull/13) · [acme-portal #11](https://github.com/devrecated/acme-portal/pull/11) visitor Try-job fixes
-
 <!-- activity:end -->
 
 ## Top repositories
@@ -85,6 +83,14 @@ Public repos across [adamsiwiec1](https://github.com/adamsiwiec1), [devrecated](
 </table>
 
 <!-- contributed:end -->
+
+## Open Source Contributions
+
+| Project | Contribution | PR(s) | Status |
+|---|---|---|---|
+| [unslothai/unsloth](https://github.com/unslothai/unsloth) | Don't reuse a leftover incomplete isolated Node tree; document sharing models and projects across login users | [#9361](https://github.com/unslothai/unsloth/pull/9361) · [#9363](https://github.com/unslothai/unsloth/pull/9363) | Merged |
+| [eugenioenko/ttt](https://github.com/eugenioenko/ttt) | Route Copy/Cut to the focused input; git gutter compares against the index; ask before Save As replaces a dangling link | [#969](https://github.com/eugenioenko/ttt/pull/969) · [#951](https://github.com/eugenioenko/ttt/pull/951) · [#926](https://github.com/eugenioenko/ttt/pull/926) | Merged |
+| [term7/MacOS-Privacy-and-Security-Enhancements](https://github.com/term7/MacOS-Privacy-and-Security-Enhancements) | SpoofMAC randomizes the MAC with macOS built-ins, no MacPorts/Node | [#3](https://github.com/term7/MacOS-Privacy-and-Security-Enhancements/pull/3) | Merged |
 
 ## Devrecated Solutions <img src="assets/icons/devrecated.png" alt="" width="24" height="24" align="absmiddle">
 
@@ -141,13 +147,6 @@ Install surfaces: [Homebrew](https://github.com/openhat-security/homebrew-tap) �
 Packaging examples: [Homebrew](https://github.com/adamsiwiec1/homebrew-tap) · [Scoop](https://github.com/adamsiwiec1/scoop-bucket) · [packages](https://github.com/adamsiwiec1/packages) · [Chocolatey](https://github.com/adamsiwiec1/chocolatey-packages)
 
 </details>
-
-## Contributions
-
-- [unslothai/unsloth #9361](https://github.com/unslothai/unsloth/pull/9361): don't reuse a leftover incomplete isolated Node tree · merged
-- [unslothai/unsloth #9363](https://github.com/unslothai/unsloth/pull/9363): document sharing models and projects across login users · merged
-- [term7/MacOS-Privacy-and-Security-Enhancements #3](https://github.com/term7/MacOS-Privacy-and-Security-Enhancements/pull/3): SpoofMAC randomizes the MAC with macOS built-ins, no MacPorts/Node · merged
-- [eugenioenko/ttt #969](https://github.com/eugenioenko/ttt/pull/969), [#951](https://github.com/eugenioenko/ttt/pull/951), [#926](https://github.com/eugenioenko/ttt/pull/926): Copy/Cut routing to the focused input, git gutter vs. index (both merged), Save As link safety
 
 <p align="center">
 <a href="mailto:sales@devrecated.com"><img src="assets/icons/devrecated.png" width="28" height="28" alt="" align="absmiddle"> sales@devrecated.com</a>
