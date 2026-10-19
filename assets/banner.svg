@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" role="img" aria-label="adam siwiec. Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur. I implement full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of niche, rapidly growing businesses. I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security. My team and I create real business value every day. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" role="img" aria-label="adam siwiec. Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur. I implement full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of niche, rapidly growing businesses; I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security; my team and I create real business value every day. FreeTech, Devrecated, OpenHat. Rust, Go, TypeScript, Python, TensorFlow, Databricks, AWS, Google Cloud, Azure, Linux.">
   <title>adam siwiec</title>
   <defs>
     <filter id="stickerShadow" x="-12%" y="-12%" width="124%" height="130%" color-interpolation-filters="sRGB">
@@ -50,8 +50,7 @@
     .d1 { animation-delay: 0.60s; }
     .d2 { animation-delay: 0.75s; }
     .d3 { animation-delay: 0.90s; }
-    .d4 { animation-delay: 1.02s; }
-    .d5 { animation-delay: 1.14s; }
+    .d4 { animation-delay: 1.05s; }
     @keyframes rise { to { opacity: 1; transform: translateY(0); } }
     @keyframes draw { to { opacity: 1; transform: scaleX(1); } }
     @keyframes drop { 0% { opacity: 0; transform: translateY(-22px); } 65% { opacity: 1; transform: translateY(3px); } 100% { opacity: 1; transform: translateY(0); } }
@@ -242,10 +241,9 @@
 
   <rect class="intro-rule" x="56" y="258" width="1088" height="1" fill="#ddd6cc"/>
   <text class="intro d1" x="56" y="332" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur.</text>
-  <text class="intro d2" x="56" y="364" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I implement full-stack, data-driven, artificial intelligence and machine learning enhanced</text>
-  <text class="intro d3" x="56" y="392" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">software solutions customized to the unique needs of niche, rapidly growing businesses.</text>
-  <text class="intro d4" x="56" y="420" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I contribute to open source and mentor engineers in software engineering, AI/ML, and</text>
-  <text class="intro d5" x="56" y="448" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">offensive security. My team and I create real business value every day.</text>
+  <g class="intro d2"><circle cx="63" cy="358" r="3.6" fill="#e07a3f"/><text x="78" y="364" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="500">I implement full-stack, data-driven, artificial intelligence and machine learning enhanced</text><text x="78" y="388" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="500">software solutions customized to the unique needs of niche, rapidly growing businesses.</text></g>
+  <g class="intro d3"><circle cx="63" cy="412" r="3.6" fill="#5b7bd5"/><text x="78" y="418" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="500">I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security.</text></g>
+  <g class="intro d4"><circle cx="63" cy="440" r="3.6" fill="#8b6fd6"/><text x="78" y="446" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="500">My team and I create real business value every day.</text></g>
   <!-- salt + pepper shakers over "Seasoned" -->
   <g aria-hidden="true">
     <circle class="speck" cx="103.3" cy="289.6" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:43.7px;--dy:30.2px;--hx:-3.7px;animation-delay:1.37s"/>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="adam siwiec. Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur. I implement full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of niche, rapidly growing businesses. I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security. My team and I create real business value every day. FreeTech, Devrecated, and OpenHat." width="100%">
+  <img src="assets/banner.svg" alt="adam siwiec. Seasoned Solution Architect. Software Engineer. Data &amp; AI Expert. Entrepreneur. I implement full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of niche, rapidly growing businesses; I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security; my team and I create real business value every day. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
 <p align="center"><a href="https://cal.com/adamsiw/15min"><img src="https://img.shields.io/badge/Book_a_15--min_call-%249.99-9F1239?style=flat&labelColor=E11D48&logo=googlecalendar&logoColor=white" alt="Book a 15-min call: $9.99"></a>
