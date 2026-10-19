@@ -3,12 +3,15 @@
 </p>
 
 <p align="center"><a href="https://cal.com/adamsiw/15min"><img src="https://img.shields.io/badge/Book_a_15--min_call-%249.99-9F1239?style=flat&labelColor=E11D48&logo=googlecalendar&logoColor=white" alt="Book a 15-min call: $9.99"></a>
-<a href="https://cal.com/adamsiw/mentorship"><img src="https://img.shields.io/badge/1--hr_Mentorship-%24199.99-5B21B6?style=flat&labelColor=7C3AED&logo=codementor&logoColor=white" alt="1-hr Mentorship: $199.99"></a>
-<a href="https://www.linkedin.com/in/adam-siwiec/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIwLjQ1IDIwLjQ1aC0zLjU2di01LjU3YzAtMS4zMy0uMDMtMy4wNC0xLjg1LTMuMDQtMS44NSAwLTIuMTQgMS40NS0yLjE0IDIuOTR2NS42N0g5LjM1VjloMy40MXYxLjU2aC4wNWMuNDgtLjkgMS42NC0xLjg1IDMuMzctMS44NSAzLjYgMCA0LjI3IDIuMzcgNC4yNyA1LjQ2djYuMjh6TTUuMzQgNy40M2EyLjA2IDIuMDYgMCAxIDEgMC00LjEzIDIuMDYgMi4wNiAwIDAgMSAwIDQuMTN6TTcuMTIgMjAuNDVIMy41NlY5aDMuNTZ2MTEuNDV6Ii8%2BPC9zdmc%2B" alt="LinkedIn"></a>
+<a href="https://cal.com/adamsiw/mentorship"><img src="https://img.shields.io/badge/1--hr_Mentorship-%24199.99-5B21B6?style=flat&labelColor=7C3AED&logo=codementor&logoColor=white" alt="1-hr Mentorship: $199.99"></a></p>
+
+<p align="center"><a href="https://www.linkedin.com/in/adam-siwiec/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIwLjQ1IDIwLjQ1aC0zLjU2di01LjU3YzAtMS4zMy0uMDMtMy4wNC0xLjg1LTMuMDQtMS44NSAwLTIuMTQgMS40NS0yLjE0IDIuOTR2NS42N0g5LjM1VjloMy40MXYxLjU2aC4wNWMuNDgtLjkgMS42NC0xLjg1IDMuMzctMS44NSAzLjYgMCA0LjI3IDIuMzcgNC4yNyA1LjQ2djYuMjh6TTUuMzQgNy40M2EyLjA2IDIuMDYgMCAxIDEgMC00LjEzIDIuMDYgMi4wNiAwIDAgMSAwIDQuMTN6TTcuMTIgMjAuNDVIMy41NlY5aDMuNTZ2MTEuNDV6Ii8%2BPC9zdmc%2B" alt="LinkedIn"></a>
 <a href="https://www.youtube.com/@devrecated"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white" alt="YouTube"></a>
 <a href="https://truffles.devrecated.com/"><img src="https://img.shields.io/badge/Truffles-EA580C?style=flat&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEyIDEwIDE2IDE5Ij48ZyBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC42MCAyNi4wMCkgc2NhbGUoMC4wMTggLTAuMDE4KSI%2BPHBhdGggZD0iTTIzNyAwVjYxN0g0NlY3MzBINTU0VjYxN0gzNjNWMFoiLz48L2c%2BPC9zdmc%2B" alt="Truffles"></a>
 <a href="https://runhug.devrecated.com/"><img src="https://img.shields.io/badge/runhug-0D9488?style=flat&logo=huggingface&logoColor=white" alt="runhug"></a>
 <a href="https://profile.hackthebox.com/profile/01a14e07-c53a-72e0-bae5-aaf48caad713"><img src="https://img.shields.io/badge/Hack_The_Box-9FEF00?style=flat&logo=hackthebox&logoColor=black" alt="Hack The Box"></a></p>
+
+I implement full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of niche, rapidly growing businesses. I contribute to open source and mentor engineers in software engineering, AI/ML, and offensive security. My team and I create real business value every day.
 
 Founder of Devrecated Solutions and OpenHat Security, which are my current priorities. 
 
@@ -18,7 +21,7 @@ Devrecated still enables clients with software Solutions, similar to FreeTech, e
 
 How can I say this with certainty? Because what we offer hasn't existed until very recently. I've spent 1000s of hours, and have been trying to build a product like AutoDevelop, our flagship product offered at Devrecated Solutions, for over 3 years now. 
 
-I failed, time and time again, until recently when several sets of new technologies were released. These recent advancements, combined with my diverse knowledge of solutions across the industry, along with the variety of methodologies I've implemented over the years throughout my R&D, are what made our vision possible. Learn more at [devrecated.com](https://devrecated.com].
+I failed, time and time again, until recently when several sets of new technologies were released. These recent advancements, combined with my diverse knowledge of solutions across the industry, along with the variety of methodologies I've implemented over the years throughout my R&D, are what made our vision possible. Learn more at [devrecated.com](https://devrecated.com).
 
 
 <table>
