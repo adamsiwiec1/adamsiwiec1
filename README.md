@@ -2,9 +2,12 @@
   <img src="assets/banner.svg" alt="adam siwiec. FreeTech, Devrecated, and OpenHat." width="100%">
 </p>
 
-Seasoned Solution Architect, Software Engineer, and Entreprenuer. I build systems and software which enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. 
+<p align="center">
+  <a href="https://cal.com/adamsiw/15min"><img src="https://img.shields.io/badge/Book_a_15--min_call-cal.com-111111?style=for-the-badge&logo=cal.com&logoColor=white" alt="Book a 15-min call"></a>
+</p>
+<p align="center">I can ship your idea to production within a matter of days.</p>
 
-[Use this link](https://cal.com/adamsiw/15min) to schedule a call with me. I can ship your idea to production within a matter of days. 
+Seasoned Solution Architect, Software Engineer, and Entreprenuer. I build systems and software which enable my clients to start, scale, and pivot their business using advanced AI/ML capabilities. 
 
 ***My core expertise is implementing full-stack, data-driven, artificial intelligence and machine learning enhanced software solutions customized to the unique needs of my clients.*** 
 
