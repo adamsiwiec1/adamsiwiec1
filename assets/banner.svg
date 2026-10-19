@@ -44,28 +44,38 @@
     @keyframes draw { to { opacity: 1; transform: scaleX(1); } }
     @keyframes drop { 0% { opacity: 0; transform: translateY(-22px); } 65% { opacity: 1; transform: translateY(3px); } 100% { opacity: 1; transform: translateY(0); } }
     @keyframes pop { to { opacity: 1; transform: scale(1); } }
-    /* salt shaker */
-    .shaker { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; transform: rotate(135deg); animation: shake 1.35s cubic-bezier(0.45, 0, 0.25, 1) 1.12s forwards; }
-    .speck { opacity: 0; animation: sprinkle 0.55s cubic-bezier(0.55, 0, 0.9, 0.6) forwards; }
-    @keyframes shake {
-      0% { opacity: 0; transform: translate(-6px, -6px) rotate(110deg); }
-      12% { opacity: 1; transform: translate(0, 0) rotate(135deg); }
-      24% { transform: translate(2px, 3px) rotate(158deg); }
-      36% { transform: translate(-1px, -1px) rotate(128deg); }
-      48% { transform: translate(2px, 3px) rotate(160deg); }
-      60% { transform: translate(-1px, -1px) rotate(130deg); }
-      70% { opacity: 1; transform: translate(2px, 2px) rotate(156deg); }
-      82% { opacity: 1; transform: translate(0, -2px) rotate(120deg); }
-      100% { opacity: 0; transform: translate(-4px, -8px) rotate(100deg); }
+    /* salt + pepper shakers: loop forever, sprinkle onto "Seasoned" */
+    .shaker { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; }
+    .salt { transform: rotate(148deg); animation: appear 0.35s ease-out 1.12s forwards, shakeSalt 1.9s ease-in-out 1.12s infinite; }
+    .pepper { transform: rotate(-148deg); animation: appear 0.35s ease-out 1.25s forwards, shakePepper 1.9s ease-in-out 0.17s infinite; }
+    .speck { opacity: 0; animation: sprinkle 1.35s linear infinite; }
+    @keyframes appear { to { opacity: 1; } }
+    @keyframes shakeSalt {
+      0%, 100% { transform: rotate(140deg); }
+      20% { transform: translate(1.5px, 2.5px) rotate(160deg); }
+      40% { transform: rotate(138deg); }
+      60% { transform: translate(1.5px, 2.5px) rotate(158deg); }
+      80% { transform: rotate(142deg); }
+    }
+    @keyframes shakePepper {
+      0%, 100% { transform: rotate(-140deg); }
+      20% { transform: translate(-1.5px, 2.5px) rotate(-160deg); }
+      40% { transform: rotate(-138deg); }
+      60% { transform: translate(-1.5px, 2.5px) rotate(-158deg); }
+      80% { transform: rotate(-142deg); }
     }
     @keyframes sprinkle {
-      0% { opacity: 0; transform: translate(0, 0); }
-      12% { opacity: 1; }
-      82% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
-      100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
+      0% { opacity: 0; transform: translate(0, 0); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+      8% { opacity: 1; }
+      52% { opacity: 1; transform: translate(var(--dx), var(--dy)); animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+      66% { opacity: 0.95; transform: translate(calc(var(--dx) + var(--hx)), calc(var(--dy) - 6px)); animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.5); }
+      100% { opacity: 0; transform: translate(calc(var(--dx) + var(--hx) * 2.2), calc(var(--dy) + 24px)); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .shaker, .speck { display: none !important; }
+      .speck { display: none !important; }
+      .shaker { animation: none !important; opacity: 1 !important; }
+      .salt { transform: rotate(148deg) !important; }
+      .pepper { transform: rotate(-148deg) !important; }
       .name, .underline, .intro-rule, .drop, .pop, .intro { animation: none !important; opacity: 1 !important; transform: none !important; }
     }
   </style>
@@ -211,31 +221,54 @@
   <text class="intro d1" x="56" y="332" fill="#111111" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.2">Seasoned Solution Architect, Software Engineer, and Entrepreneur.</text>
   <text class="intro d2" x="56" y="364" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">I build systems and software that enable my clients to start, scale, and pivot their business</text>
   <text class="intro d3" x="56" y="392" fill="#3d3a36" font-family="Avenir Next, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="500">using advanced AI/ML capabilities.</text>
-  <!-- salt shaker: shakes over "Seasoned", then fades -->
+  <!-- salt + pepper shakers over "Seasoned" -->
   <g aria-hidden="true">
-    <circle class="speck" cx="117.1" cy="291.3" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:10.5px;--dy:25.1px;animation-delay:1.36s"/>
-    <circle class="speck" cx="118.2" cy="291.7" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-22.8px;--dy:26.8px;animation-delay:1.42s"/>
-    <circle class="speck" cx="115.7" cy="291.9" r="1.3" fill="#111111" style="--dx:-22.1px;--dy:24.6px;animation-delay:1.47s"/>
-    <circle class="speck" cx="117.6" cy="292.7" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-19.1px;--dy:24.5px;animation-delay:1.53s"/>
-    <circle class="speck" cx="118.6" cy="292.9" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:6.3px;--dy:25.1px;animation-delay:1.58s"/>
-    <circle class="speck" cx="120.4" cy="291.1" r="1.3" fill="#111111" style="--dx:22.1px;--dy:26.4px;animation-delay:1.64s"/>
-    <circle class="speck" cx="116.2" cy="291.2" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-8.7px;--dy:28.8px;animation-delay:1.69s"/>
-    <circle class="speck" cx="116.4" cy="292.2" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:9.8px;--dy:25.7px;animation-delay:1.75s"/>
-    <circle class="speck" cx="118.2" cy="291.1" r="1.3" fill="#111111" style="--dx:-22.7px;--dy:25.9px;animation-delay:1.80s"/>
-    <circle class="speck" cx="118.9" cy="291.9" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-8.4px;--dy:27.1px;animation-delay:1.85s"/>
-    <circle class="speck" cx="117.8" cy="291.6" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:18.5px;--dy:27.9px;animation-delay:1.91s"/>
-    <circle class="speck" cx="116.7" cy="292.1" r="1.3" fill="#111111" style="--dx:3.4px;--dy:28.2px;animation-delay:1.97s"/>
-    <circle class="speck" cx="119.1" cy="291.6" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:28.9px;--dy:25.0px;animation-delay:2.02s"/>
-    <circle class="speck" cx="117.6" cy="292.5" r="1.6" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-17.5px;--dy:25.9px;animation-delay:2.08s"/>
-    <g transform="translate(110 280)">
-      <g class="shaker">
+    <circle class="speck" cx="103.3" cy="289.6" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:43.7px;--dy:30.2px;--hx:-3.7px;animation-delay:1.37s"/>
+    <circle class="speck" cx="104.0" cy="290.1" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-33.4px;--dy:29.1px;--hx:-5.2px;animation-delay:1.49s"/>
+    <circle class="speck" cx="104.0" cy="289.7" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-5.6px;--dy:30.1px;--hx:-5.5px;animation-delay:1.59s"/>
+    <circle class="speck" cx="101.8" cy="288.6" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:41.2px;--dy:31.8px;--hx:4.3px;animation-delay:1.69s"/>
+    <circle class="speck" cx="102.3" cy="289.0" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-13.2px;--dy:29.1px;--hx:-4.8px;animation-delay:1.78s"/>
+    <circle class="speck" cx="105.5" cy="290.5" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:33.8px;--dy:30.3px;--hx:6.0px;animation-delay:1.89s"/>
+    <circle class="speck" cx="101.6" cy="289.6" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-29.7px;--dy:28.8px;--hx:4.5px;animation-delay:2.01s"/>
+    <circle class="speck" cx="104.9" cy="288.5" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-23.6px;--dy:33.1px;--hx:4.5px;animation-delay:2.11s"/>
+    <circle class="speck" cx="103.2" cy="289.6" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-22.9px;--dy:31.1px;--hx:3.3px;animation-delay:2.19s"/>
+    <circle class="speck" cx="105.4" cy="290.0" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-32.5px;--dy:29.0px;--hx:-3.0px;animation-delay:2.30s"/>
+    <circle class="speck" cx="103.4" cy="289.9" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-24.1px;--dy:30.2px;--hx:-4.7px;animation-delay:2.40s"/>
+    <circle class="speck" cx="103.1" cy="290.5" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:-41.0px;--dy:31.0px;--hx:7.0px;animation-delay:2.49s"/>
+    <circle class="speck" cx="102.2" cy="290.5" r="1.5" fill="#ffffff" stroke="#111111" stroke-width="0.7" style="--dx:15.1px;--dy:29.8px;--hx:-7.0px;animation-delay:2.60s"/>
+    <circle class="speck" cx="127.5" cy="289.0" r="1.25" fill="#1a1816" style="--dx:-35.3px;--dy:30.1px;--hx:-3.3px;animation-delay:1.46s"/>
+    <circle class="speck" cx="129.0" cy="287.5" r="1.25" fill="#1a1816" style="--dx:-33.1px;--dy:33.0px;--hx:-6.8px;animation-delay:1.57s"/>
+    <circle class="speck" cx="128.8" cy="289.2" r="1.25" fill="#1a1816" style="--dx:-50.0px;--dy:29.4px;--hx:-6.3px;animation-delay:1.67s"/>
+    <circle class="speck" cx="127.3" cy="289.0" r="1.25" fill="#1a1816" style="--dx:21.3px;--dy:29.8px;--hx:6.5px;animation-delay:1.79s"/>
+    <circle class="speck" cx="128.2" cy="287.7" r="1.25" fill="#1a1816" style="--dx:-62.6px;--dy:34.1px;--hx:-6.0px;animation-delay:1.88s"/>
+    <circle class="speck" cx="128.2" cy="289.3" r="1.25" fill="#1a1816" style="--dx:-21.0px;--dy:30.8px;--hx:-3.5px;animation-delay:1.99s"/>
+    <circle class="speck" cx="129.1" cy="288.7" r="1.25" fill="#1a1816" style="--dx:-60.3px;--dy:30.1px;--hx:-6.0px;animation-delay:2.08s"/>
+    <circle class="speck" cx="128.1" cy="288.0" r="1.25" fill="#1a1816" style="--dx:-61.9px;--dy:31.1px;--hx:-3.4px;animation-delay:2.18s"/>
+    <circle class="speck" cx="128.3" cy="288.2" r="1.25" fill="#1a1816" style="--dx:1.1px;--dy:31.9px;--hx:-5.4px;animation-delay:2.32s"/>
+    <circle class="speck" cx="128.4" cy="288.2" r="1.25" fill="#1a1816" style="--dx:-37.7px;--dy:29.9px;--hx:-4.9px;animation-delay:2.41s"/>
+    <circle class="speck" cx="127.8" cy="289.5" r="1.25" fill="#1a1816" style="--dx:-58.9px;--dy:30.7px;--hx:-6.6px;animation-delay:2.52s"/>
+    <circle class="speck" cx="129.3" cy="289.1" r="1.25" fill="#1a1816" style="--dx:16.9px;--dy:30.3px;--hx:6.6px;animation-delay:2.63s"/>
+    <circle class="speck" cx="128.2" cy="289.1" r="1.25" fill="#1a1816" style="--dx:13.3px;--dy:31.2px;--hx:4.5px;animation-delay:2.70s"/>
+    <g transform="translate(98 280)">
+      <g class="shaker salt">
         <path d="M-7 -3.5 L-8.2 10.5 Q-8.4 13 -5.8 13 L5.8 13 Q8.4 13 8.2 10.5 L7 -3.5 Z" fill="#ffffff" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
-        <rect x="-7.8" y="-6.4" width="15.6" height="3.2" rx="1" fill="#111111"/>
+        <rect x="-7.8" y="-6.4" width="15.6" height="3.2" rx="1" fill="#111111" stroke="#111111" stroke-width="0.8"/>
         <path d="M-6.6 -6.4 L-6.6 -9 Q-6.6 -13 -2.6 -13 L2.6 -13 Q6.6 -13 6.6 -9 L6.6 -6.4 Z" fill="#ffffff" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
         <circle cx="-2.6" cy="-9.6" r="0.9" fill="#111111"/>
         <circle cx="0" cy="-10.6" r="0.9" fill="#111111"/>
         <circle cx="2.6" cy="-9.6" r="0.9" fill="#111111"/>
         <path d="M-4.2 0 L-4.8 8.5" stroke="#111111" stroke-opacity="0.18" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+    </g>
+    <g transform="translate(134 279)">
+      <g class="shaker pepper">
+        <path d="M-7 -3.5 L-8.2 10.5 Q-8.4 13 -5.8 13 L5.8 13 Q8.4 13 8.2 10.5 L7 -3.5 Z" fill="#2a2724" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="-7.8" y="-6.4" width="15.6" height="3.2" rx="1" fill="#ece7df" stroke="#111111" stroke-width="0.8"/>
+        <path d="M-6.6 -6.4 L-6.6 -9 Q-6.6 -13 -2.6 -13 L2.6 -13 Q6.6 -13 6.6 -9 L6.6 -6.4 Z" fill="#2a2724" stroke="#111111" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="-2.6" cy="-9.6" r="0.9" fill="#f4f1eb"/>
+        <circle cx="0" cy="-10.6" r="0.9" fill="#f4f1eb"/>
+        <circle cx="2.6" cy="-9.6" r="0.9" fill="#f4f1eb"/>
+        <path d="M-4.2 0 L-4.8 8.5" stroke="#ffffff" stroke-opacity="0.28" stroke-width="1.6" stroke-linecap="round"/>
       </g>
     </g>
   </g>
