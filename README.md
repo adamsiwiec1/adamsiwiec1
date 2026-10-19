@@ -28,7 +28,7 @@ I failed, time and time again, until recently when several sets of new technolog
 <a href="https://openhat.devrecated.com"><img src="assets/openhat-lockup.svg" alt="OpenHat Security" width="200"></a>
 </td>
 <td valign="middle">
-<a href="https://github.com/adamsiwiec1"><img src="assets/all-time.svg" alt="All-time GitHub stats. 10,352 contributions, 9,305 commits, 34.8 million line edits since October 2020." width="100%"></a>
+<a href="https://github.com/adamsiwiec1"><img src="assets/all-time.svg" alt="All-time GitHub stats. 11,756 contributions, 9,305 commits, 34.8 million line edits since October 2020." width="100%"></a>
 </td>
 </tr>
 </table>

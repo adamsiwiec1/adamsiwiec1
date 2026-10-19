@@ -2,8 +2,8 @@
 <title>Activity, commits, line edits, and consistency</title>
 <rect width="352" height="168" rx="6" fill="#0d1117" stroke="#30363d"/>
 <text x="10" y="14" fill="#e6edf3" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="700">Activity</text>
-<text x="342" y="14" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">as of 2026-10-13</text>
-<text x="10" y="28" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">lifetime · 10.4k act · 9.3k commits · 34.8M edits</text>
+<text x="342" y="14" text-anchor="end" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">as of 2026-10-19</text>
+<text x="10" y="28" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">lifetime · 11.8k act · 9.3k commits · 34.8M edits</text>
 <text x="10" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">window</text>
 <text x="57" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">activity</text>
 <text x="104" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">commits</text>
@@ -12,31 +12,31 @@
 <text x="247" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">edits</text>
 <text x="294" y="44" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8">days</text>
 <text x="10" y="60" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 90d</text>
-<text x="57" y="60" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2k</text>
-<text x="104" y="60" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">926</text>
-<text x="152" y="60" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">100</text>
-<text x="199" y="60" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">63</text>
-<text x="247" y="60" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">9.6M</text>
-<text x="294" y="60" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">71/90</text>
+<text x="57" y="60" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.7k</text>
+<text x="104" y="60" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">542</text>
+<text x="152" y="60" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">66</text>
+<text x="199" y="60" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">40</text>
+<text x="247" y="60" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2M</text>
+<text x="294" y="60" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">76/90</text>
 <text x="10" y="80" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 60d</text>
-<text x="57" y="80" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.2k</text>
-<text x="104" y="80" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">881</text>
-<text x="152" y="80" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">98</text>
-<text x="199" y="80" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">60</text>
-<text x="247" y="80" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">8.8M</text>
-<text x="294" y="80" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">57/60</text>
+<text x="57" y="80" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">1.6k</text>
+<text x="104" y="80" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">491</text>
+<text x="152" y="80" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">65</text>
+<text x="199" y="80" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">35</text>
+<text x="247" y="80" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">534.3k</text>
+<text x="294" y="80" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">58/60</text>
 <text x="10" y="100" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 30d</text>
-<text x="57" y="100" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">818</text>
-<text x="104" y="100" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">651</text>
-<text x="152" y="100" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">73</text>
-<text x="199" y="100" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">43</text>
-<text x="247" y="100" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">2.4M</text>
+<text x="57" y="100" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">984</text>
+<text x="104" y="100" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">326</text>
+<text x="152" y="100" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">35</text>
+<text x="199" y="100" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">30</text>
+<text x="247" y="100" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">310.9k</text>
 <text x="294" y="100" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">30/30</text>
 <text x="10" y="120" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">last 7d</text>
-<text x="57" y="120" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">206</text>
-<text x="104" y="120" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">169</text>
-<text x="152" y="120" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">13</text>
-<text x="199" y="120" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">20</text>
-<text x="247" y="120" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">186.2k</text>
+<text x="57" y="120" fill="#3fb950" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">376</text>
+<text x="104" y="120" fill="#58a6ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">92</text>
+<text x="152" y="120" fill="#f778ba" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">25</text>
+<text x="199" y="120" fill="#79c0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">11</text>
+<text x="247" y="120" fill="#d29922" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">20.6k</text>
 <text x="294" y="120" fill="#a371f7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">7/7</text>
 </svg>
