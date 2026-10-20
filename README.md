@@ -16,6 +16,7 @@
 <a href="https://github.com/adamsiwiec1?tab=repositories&amp;sort=stargazers"><img src="https://img.shields.io/github/stars/adamsiwiec1?style=flat&amp;label=Stars&amp;logo=github&amp;logoColor=white&amp;labelColor=24292F&amp;color=E3B341" alt="Total GitHub stars"></a>
 <a href="https://www.youtube.com/@devrecated"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.socialcounts.org%2Fyoutube-live-subscriber-count%2FUCUE8w-sS069aOTemKSb0YmQ&amp;query=%24.counters.api.subscriberCount&amp;label=Subscribers&amp;logo=youtube&amp;logoColor=white&amp;labelColor=CC0000&amp;color=FF0000&amp;style=flat&amp;cacheSeconds=3600" alt="YouTube subscribers"></a>
 <img src="assets/streak.svg" alt="Current commit streak">
+<img src="assets/longest-streak.svg" alt="Longest streak: 71 days (Jan 8, 2025 to Mar 19, 2025)">
 <img src="https://img.shields.io/badge/Open_to_projects-16A34A?style=flat&amp;logo=checkmarx&amp;logoColor=white" alt="Open to projects">
 <img src="https://img.shields.io/badge/Timezone-ET-334155?style=flat&amp;labelColor=1E293B&amp;logo=clockify&amp;logoColor=white" alt="Timezone: ET"></p>
 

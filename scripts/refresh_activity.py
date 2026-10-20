@@ -29,6 +29,8 @@ CONTRIB_START = "<!-- contributed:start -->"
 CONTRIB_END = "<!-- contributed:end -->"
 OUT_REPOS = ROOT / "assets" / "repos-90d.svg"
 OUT_STREAK = ROOT / "assets" / "streak.svg"
+OUT_LONGEST = ROOT / "assets" / "longest-streak.svg"
+ACCOUNT_CREATED = dt.date(2020, 10, 19)
 
 # GitHub dark contribution levels (same ramp as the profile calendar).
 GRAPH_LEVELS = ("#161b22", "#0e4429", "#006d32", "#26a641", "#39d353")
@@ -790,6 +792,70 @@ def render_streak_svg(streak: int) -> str:
         return resp.read().decode()
 
 
+def all_calendar_days(now: dt.datetime, since: dt.date = ACCOUNT_CREATED) -> list[dict]:
+    """Every contribution-calendar day since `since`, fetched one year at a time."""
+    query = """
+    query($login:String!, $from:DateTime!, $to:DateTime!) {
+      user(login:$login) {
+        contributionsCollection(from:$from, to:$to) {
+          contributionCalendar { weeks { contributionDays { date contributionCount } } }
+        }
+      }
+    }
+    """
+    days: dict[str, int] = {}
+    start = dt.datetime.combine(since, dt.time(), tzinfo=timezone.utc)
+    while start <= now:
+        end = min(start + dt.timedelta(days=365) - dt.timedelta(seconds=1), now)
+        cal = gh_graphql(query, {"login": LOGIN, "from": iso(start), "to": iso(end)})
+        for week in cal["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]:
+            for day in week["contributionDays"]:
+                if since.isoformat() <= day["date"] <= now.date().isoformat():
+                    days[day["date"]] = max(days.get(day["date"], 0), day["contributionCount"])
+        start += dt.timedelta(days=365)
+    return [{"date": d, "contributionCount": c} for d, c in sorted(days.items())]
+
+
+def longest_streak(days: list[dict]) -> tuple[int, str | None, str | None]:
+    """Longest run of consecutive days with contributions: (length, first day, last day)."""
+    best, best_start, best_end = 0, None, None
+    run, run_start, prev = 0, None, None
+    for day in sorted(days, key=lambda d: d["date"]):
+        date = dt.date.fromisoformat(day["date"])
+        if day["contributionCount"] > 0:
+            if run and prev and date == prev + dt.timedelta(days=1):
+                run += 1
+            else:
+                run, run_start = 1, date
+            if run > best:
+                best, best_start, best_end = run, run_start, date
+        else:
+            run = 0
+        prev = date
+    fmt = lambda d: d.isoformat() if d else None
+    return best, fmt(best_start), fmt(best_end)
+
+
+def render_longest_streak_svg(length: int, first: str | None, last: str | None) -> str:
+    """Chip-sized flat badge; the date range goes in the SVG title and aria-label."""
+    import urllib.request
+
+    unit = "day" if length == 1 else "days"
+    url = (
+        "https://img.shields.io/badge/Longest_streak-"
+        f"{length}_{unit}-B45309?style=flat&labelColor=92400E&logo=fireship&logoColor=white"
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": "profile-refresh"})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        svg = resp.read().decode()
+    if first and last:
+        a, b = dt.date.fromisoformat(first), dt.date.fromisoformat(last)
+        label = f"Longest streak: {length} {unit} ({a:%b} {a.day}, {a.year} to {b:%b} {b.day}, {b.year})"
+        svg = re.sub(r'aria-label="[^"]*"', f'aria-label="{_xml(label)}"', svg, count=1)
+        svg = re.sub(r"<title>[^<]*</title>", f"<title>{_xml(label)}</title>", svg, count=1)
+    return svg
+
+
 def main() -> int:
     now = dt.datetime.now(timezone.utc)
     calendar_days = contribution_calendar(now, 90)
@@ -832,6 +898,7 @@ def main() -> int:
     OUT_LIFETIME.write_text(render_lifetime_svg(lifetime))
     OUT_REPOS.write_text(render_repos_strip_svg(repos))
     OUT_STREAK.write_text(render_streak_svg(current_streak(calendar_days)))
+    OUT_LONGEST.write_text(render_longest_streak_svg(*longest_streak(all_calendar_days(now))))
     # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
