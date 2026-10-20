@@ -11,8 +11,6 @@
 <a href="https://profile.hackthebox.com/profile/01a14e07-c53a-72e0-bae5-aaf48caad713"><img src="https://img.shields.io/badge/Hack_The_Box-9FEF00?style=flat&logo=hackthebox&logoColor=black" alt="Hack The Box"></a>
 <a href="https://www.instagram.com/devrecated/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white" alt="Instagram"></a>
 <a href="https://x.com/devrecated"><img src="https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white" alt="X"></a></p>
-<p align="center"><img src="https://komarev.com/ghpvc/?username=adamsiwiec1&amp;style=flat&amp;color=0E75B6&amp;label=Profile+views" alt="Profile views">
-<a href="https://github.com/adamsiwiec1?tab=followers"><img src="https://img.shields.io/github/followers/adamsiwiec1?style=flat&amp;label=Followers&amp;logo=github&amp;logoColor=white&amp;labelColor=24292F&amp;color=24292F" alt="GitHub followers"></a>
 <a href="https://github.com/adamsiwiec1?tab=repositories&amp;sort=stargazers"><img src="https://img.shields.io/github/stars/adamsiwiec1?style=flat&amp;label=Stars&amp;logo=github&amp;logoColor=white&amp;labelColor=24292F&amp;color=E3B341" alt="Total GitHub stars"></a>
 <a href="https://www.youtube.com/@devrecated"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.socialcounts.org%2Fyoutube-live-subscriber-count%2FUCUE8w-sS069aOTemKSb0YmQ&amp;query=%24.counters.api.subscriberCount&amp;label=Subscribers&amp;logo=youtube&amp;logoColor=white&amp;labelColor=CC0000&amp;color=FF0000&amp;style=flat&amp;cacheSeconds=3600" alt="YouTube subscribers"></a>
 <img src="assets/streak.svg" alt="Current commit streak">
