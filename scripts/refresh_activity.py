@@ -765,20 +765,47 @@ def patch_readme(activity_block: str, contrib_block: str) -> None:
     README.write_text(text)
 
 
-def current_streak(calendar_days: list[dict]) -> int:
-    """Consecutive days with contributions, ending today (or yesterday if today is still empty)."""
-    counts = [d["contributionCount"] for d in sorted(calendar_days, key=lambda d: d["date"])]
-    if counts and counts[-1] == 0:
-        counts = counts[:-1]
+def ny_today() -> dt.date:
+    from zoneinfo import ZoneInfo
+
+    return dt.datetime.now(ZoneInfo("America/New_York")).date()
+
+
+def merge_git_days(days: list[dict], git_days: set[str]) -> list[dict]:
+    """Union of calendar days with contributions and local git commit days (America/New_York)."""
+    merged = {d["date"]: d["contributionCount"] for d in days}
+    for day in git_days:
+        if merged.get(day, 0) <= 0:
+            merged[day] = 1
+    return [{"date": d, "contributionCount": c} for d, c in sorted(merged.items())]
+
+
+def load_git_days(path: str | None) -> set[str]:
+    """Optional JSON file: a list of YYYY-MM-DD strings, or rows whose first item is the date."""
+    if not path:
+        return set()
+    rows = json.loads(Path(path).expanduser().read_text())
+    return {row if isinstance(row, str) else row[0] for row in rows}
+
+
+def current_streak_info(days: list[dict], today: dt.date | None = None) -> tuple[int, str | None]:
+    """(length, first day) of the run ending today, or yesterday if today has nothing yet."""
+    active = {d["date"] for d in days if d["contributionCount"] > 0}
+    day = today or ny_today()
+    if day.isoformat() not in active:
+        day -= dt.timedelta(days=1)
     streak = 0
-    for c in reversed(counts):
-        if c <= 0:
-            break
+    while day.isoformat() in active:
         streak += 1
-    return streak
+        day -= dt.timedelta(days=1)
+    return streak, (day + dt.timedelta(days=1)).isoformat() if streak else None
 
 
-def render_streak_svg(streak: int) -> str:
+def current_streak(calendar_days: list[dict]) -> int:
+    return current_streak_info(calendar_days)[0]
+
+
+def render_streak_svg(streak: int, start: str | None = None) -> str:
     """Chip-sized shields.io flat badge, saved locally so it matches the other badges."""
     import urllib.request
 
@@ -789,7 +816,13 @@ def render_streak_svg(streak: int) -> str:
     )
     req = urllib.request.Request(url, headers={"User-Agent": "profile-refresh"})
     with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode()
+        svg = resp.read().decode()
+    if start:
+        a = dt.date.fromisoformat(start)
+        label = f"Commit streak: {streak} {unit} (since {a:%b} {a.day}, {a.year})"
+        svg = re.sub(r'aria-label="[^"]*"', f'aria-label="{_xml(label)}"', svg, count=1)
+        svg = re.sub(r"<title>[^<]*</title>", f"<title>{_xml(label)}</title>", svg, count=1)
+    return svg
 
 
 def all_calendar_days(now: dt.datetime, since: dt.date = ACCOUNT_CREATED) -> list[dict]:
@@ -856,7 +889,31 @@ def render_longest_streak_svg(length: int, first: str | None, last: str | None) 
     return svg
 
 
+def write_streak_chips(now: dt.datetime, git_days_path: str | None = None) -> None:
+    """Streak chips from the full calendar, optionally merged with local git commit days."""
+    days = all_calendar_days(now)
+    git_days = load_git_days(git_days_path)
+    if git_days:
+        days = merge_git_days(days, git_days)
+    OUT_STREAK.write_text(render_streak_svg(*current_streak_info(days)))
+    OUT_LONGEST.write_text(render_longest_streak_svg(*longest_streak(days)))
+
+
 def main() -> int:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--git-days",
+        help="JSON list of YYYY-MM-DD commit days (America/New_York) from local git history, "
+        "e.g. ~/.cache/commit-count/git-days.json; merged into the streak chips",
+    )
+    parser.add_argument("--streaks-only", action="store_true", help="only rewrite the streak chips")
+    args = parser.parse_args()
+    git_days_path = args.git_days
+    if args.streaks_only:
+        write_streak_chips(dt.datetime.now(timezone.utc), git_days_path)
+        return 0
     now = dt.datetime.now(timezone.utc)
     calendar_days = contribution_calendar(now, 90)
     consistency = consistency_for_windows(calendar_days, now)
@@ -897,8 +954,7 @@ def main() -> int:
     OUT_PANEL.write_text(panel_svg)
     OUT_LIFETIME.write_text(render_lifetime_svg(lifetime))
     OUT_REPOS.write_text(render_repos_strip_svg(repos))
-    OUT_STREAK.write_text(render_streak_svg(current_streak(calendar_days)))
-    OUT_LONGEST.write_text(render_longest_streak_svg(*longest_streak(all_calendar_days(now))))
+    write_streak_chips(now, git_days_path)
     # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
