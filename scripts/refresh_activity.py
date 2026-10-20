@@ -28,6 +28,7 @@ END_MARK = "<!-- activity:end -->"
 CONTRIB_START = "<!-- contributed:start -->"
 CONTRIB_END = "<!-- contributed:end -->"
 OUT_REPOS = ROOT / "assets" / "repos-90d.svg"
+OUT_STREAK = ROOT / "assets" / "streak.svg"
 
 # GitHub dark contribution levels (same ramp as the profile calendar).
 GRAPH_LEVELS = ("#161b22", "#0e4429", "#006d32", "#26a641", "#39d353")
@@ -762,6 +763,33 @@ def patch_readme(activity_block: str, contrib_block: str) -> None:
     README.write_text(text)
 
 
+def current_streak(calendar_days: list[dict]) -> int:
+    """Consecutive days with contributions, ending today (or yesterday if today is still empty)."""
+    counts = [d["contributionCount"] for d in sorted(calendar_days, key=lambda d: d["date"])]
+    if counts and counts[-1] == 0:
+        counts = counts[:-1]
+    streak = 0
+    for c in reversed(counts):
+        if c <= 0:
+            break
+        streak += 1
+    return streak
+
+
+def render_streak_svg(streak: int) -> str:
+    """Chip-sized shields.io flat badge, saved locally so it matches the other badges."""
+    import urllib.request
+
+    unit = "day" if streak == 1 else "days"
+    url = (
+        "https://img.shields.io/badge/Commit_streak-"
+        f"{streak}_{unit}-EA580C?style=flat&labelColor=C2410C&logo=fireship&logoColor=white"
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": "profile-refresh"})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return resp.read().decode()
+
+
 def main() -> int:
     now = dt.datetime.now(timezone.utc)
     calendar_days = contribution_calendar(now, 90)
@@ -803,6 +831,7 @@ def main() -> int:
     OUT_PANEL.write_text(panel_svg)
     OUT_LIFETIME.write_text(render_lifetime_svg(lifetime))
     OUT_REPOS.write_text(render_repos_strip_svg(repos))
+    OUT_STREAK.write_text(render_streak_svg(current_streak(calendar_days)))
     # Keep standalone assets in sync for reference / older links.
     graph_svg = render_contribution_graph(calendar_days, now)
     OUT_GRAPH.write_text(graph_svg)
